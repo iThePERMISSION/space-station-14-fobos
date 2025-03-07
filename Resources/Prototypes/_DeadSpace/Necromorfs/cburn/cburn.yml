@@ -27,7 +27,7 @@
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitCBURNNECROLeader
     shoes: ADTClothingShoesBootsMagERT
-    id: CBURNPDA
+    id: CBURNLeaderPDA
     pocket1: KukriKnife
     pocket2: WeaponPulsePistol
     suitstorage: OxygenTankFilled
@@ -49,6 +49,7 @@
     - ZetaTwoMedipen
     - ZetaTwoMedipen
     - Crowbar
+    - PinpointerNuclear
 
 - type: startingGear
   id: CBURNNECROSoldierGear
@@ -114,8 +115,10 @@
         - !type:DepartmentTimeRequirement
           department: Command
           time: 36000 # 10 hours
-    - type: GhostTakeoverAvailable
-    - type: RandomMetadata
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable
+  - type: RandomMetadata
       nameSegments:
       - NamesFirstERTLeader
       - NamesLastERT
@@ -151,8 +154,10 @@
         - !type:DepartmentTimeRequirement
           department: Command
           time: 36000 # 10 hours
-    - type: GhostTakeoverAvailable
-    - type: RandomMetadata
+    raffle:
+      settings: short          
+  - type: GhostTakeoverAvailable
+  - type: RandomMetadata
       nameSegments:
       - NamesFirstERT
       - NamesLastERT

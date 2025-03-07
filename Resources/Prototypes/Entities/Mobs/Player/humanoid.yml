@@ -140,53 +140,6 @@
   - type: TTS
     voice: Garithos
 
-## Centcom Blue Shield
-
-- type: entity
-  parent: MarkerBase
-  id: RandomHumanoidSpawnerMobHumanCentcomBlueShieldOfficer # Not actualy RandomHumanoidSpawner ¯\_(ツ)_/¯ x2
-  components:
-  - type: Sprite
-    layers:
-    - state: green
-    - sprite: Markers/jobs.rsi
-      state: blueshield-low
-  - type: ConditionalSpawner
-    prototypes:
-    - MobHumanCentcomBlueShieldOfficer
-
-- type: entity
-  parent: MobHuman
-  id: MobHumanCentcomBlueShieldOfficer
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: MindShield
-  - type: ZombieImmune
-  - type: AntagImmune
-  - type: AutoImplant
-    implants:
-    - TrackingImplant
-  - type: GhostRole
-    name: ghost-role-information-blueshieldofficer-name
-    description: ghost-role-information-blueshieldofficer-description
-    rules: ghost-role-information-centcom-personal-rules
-    requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 180000 # 50 hours
-      - !type:DepartmentTimeRequirement
-        department: Security
-        time: 72000 # 20 hours
-    raffle:
-      settings: short
-  - type: GhostTakeoverAvailable
-  - type: RandomMetadata
-    nameSegments:
-      - NamesFirstERT
-      - NamesLastERT
-  - type: Loadout
-    prototypes: [ CentcomBlueShieldGear ]
-    roleLoadout: [ RoleSurvivalEVA ]
-
 # ERT
 ## Leader
 ### Amber
@@ -791,6 +744,51 @@
       job: ERTEngineerGamma
     - type: Loadout
       prototypes: [ ERTEngineerGearGamma ]
+
+## Centcom Blue Shield
+
+- type: entity
+  id: RandomHumanoidSpawnerCentcomBlueShieldOfficer 
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Markers/jobs.rsi
+      state: blueshield-low
+  - type: RandomHumanoidSpawner
+    settings: MobHumanCentcomBlueShieldOfficer
+
+- type: randomHumanoidSettings
+  parent: EventHumanoidERT
+  id: MobHumanCentcomBlueShieldOfficer
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MindShield
+  - type: ZombieImmune
+  - type: AntagImmune
+  - type: GhostRole
+    name: ghost-role-information-blueshieldofficer-name
+    description: ghost-role-information-blueshieldofficer-description
+    rules: ghost-role-information-centcom-personal-rules
+    requirements:
+      - !type:OverallPlaytimeRequirement
+        time: 252000 # 70 hours
+      - !type:DepartmentTimeRequirement
+        department: Security
+        time: 108000 # 30 hours
+      - !type:DepartmentTimeRequirement
+        department: Medical
+        time: 36000 # 10 hours 
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable
+  - type: RandomMetadata
+    nameSegments:
+      - NamesFirstERT
+      - NamesLastERT
+  - type: Loadout
+    prototypes: [ CentcomBlueShieldGear ]
+    roleLoadout: [ RoleSurvivalEVA ]
 
 ## CBURN Agent
 - type: entity
