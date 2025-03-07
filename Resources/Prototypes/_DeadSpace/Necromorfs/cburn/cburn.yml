@@ -154,10 +154,13 @@
         - !type:DepartmentTimeRequirement
           department: Command
           time: 36000 # 10 hours
-    raffle:
-      settings: short          
-  - type: GhostTakeoverAvailable
-  - type: RandomMetadata
-      nameSegments:
-      - NamesFirstERT
-      - NamesLastERT
+  raffle:
+    settings: short
+- type: GhostTakeoverAvailable
+- type: RandomMetadata
+  nameSegments:
+    - NamesFirstERT
+    - NamesLastERT
+
+
+
