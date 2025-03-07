@@ -115,13 +115,13 @@
         - !type:DepartmentTimeRequirement
           department: Command
           time: 36000 # 10 hours
-    raffle:
-      settings: short
-  - type: GhostTakeoverAvailable
-  - type: RandomMetadata
+      raffle:
+        settings: short
+    - type: GhostTakeoverAvailable
+    - type: RandomMetadata
       nameSegments:
-      - NamesFirstERTLeader
-      - NamesLastERT
+        - NamesFirstERT
+        - NamesLastERT
 
 - type: entity
   id: RandomHumanoidSpawnerCBURNSoldierNECRO
