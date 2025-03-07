@@ -99,13 +99,13 @@
   id: CBURNLeaderNECRO
   parent: EventHumanoidERTZombieImmune
   components:
-    - type: Loadout
-      prototypes: [CBURNNECROLeaderGear]
-    - type: GhostRole
-      name: ghost-role-information-cburn-leader-name
-      description: ghost-role-information-cburn-leader-description
-      rules: ghost-role-information-nonantagonist-rules
-      requirements:
+  - type: Loadout
+    prototypes: [CBURNNECROLeaderGear]
+  - type: GhostRole
+    name: ghost-role-information-cburn-leader-name
+    description: ghost-role-information-cburn-leader-description
+    rules: ghost-role-information-nonantagonist-rules
+    requirements:
         - !type:DepartmentTimeRequirement
           department: Medical
           time: 36000 # 10 hours
@@ -115,13 +115,13 @@
         - !type:DepartmentTimeRequirement
           department: Command
           time: 36000 # 10 hours
-      raffle:
-        settings: short
-    - type: GhostTakeoverAvailable
-    - type: RandomMetadata
-      nameSegments:
-        - NamesFirstERT
-        - NamesLastERT
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable
+  - type: RandomMetadata
+    nameSegments:
+      - NamesFirstERTLeader
+      - NamesLastERT
 
 - type: entity
   id: RandomHumanoidSpawnerCBURNSoldierNECRO
@@ -138,29 +138,29 @@
   id: CBURNSoldierNECRO
   parent: EventHumanoidERTZombieImmune
   components:
-    - type: Loadout
-      prototypes: [CBURNNECROSoldierGear]
-    - type: GhostRole
-      name: ghost-role-information-cburn-agent-name
-      description: ghost-role-information-cburn-agent-description
-      rules: ghost-role-information-nonantagonist-rules
-      requirements:
-        - !type:DepartmentTimeRequirement
-          department: Medical
-          time: 36000 # 10 hours
-        - !type:DepartmentTimeRequirement
-          department: Security
-          time: 72000 # 20 hours
-        - !type:DepartmentTimeRequirement
-          department: Command
-          time: 36000 # 10 hours
-  raffle:
-    settings: short
-- type: GhostTakeoverAvailable
-- type: RandomMetadata
-  nameSegments:
-    - NamesFirstERT
-    - NamesLastERT
+  - type: Loadout
+    prototypes: [CBURNNECROSoldierGear]
+  - type: GhostRole
+    name: ghost-role-information-cburn-agent-name
+    description: ghost-role-information-cburn-agent-description
+    rules: ghost-role-information-nonantagonist-rules
+    requirements:
+       - !type:DepartmentTimeRequirement
+         department: Medical
+         time: 36000 # 10 hours
+       - !type:DepartmentTimeRequirement
+         department: Security
+         time: 72000 # 20 hours
+       - !type:DepartmentTimeRequirement
+         department: Command
+         time: 36000 # 10 hours
+    raffle:
+        settings: short
+  - type: GhostTakeoverAvailable
+  - type: RandomMetadata
+    nameSegments:
+      - NamesFirstERT
+      - NamesLastERT
 
 
 
