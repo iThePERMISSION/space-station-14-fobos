@@ -755,12 +755,11 @@
     - sprite: Markers/jobs.rsi
       state: blueshield-low
   - type: RandomHumanoidSpawner
-    settings: MobHumanCentcomBlueShieldOfficer
+    settings: CentcomBlueShieldOfficerPreset
 
 - type: randomHumanoidSettings
   parent: EventHumanoidERT
-  id: MobHumanCentcomBlueShieldOfficer
-  categories: [ HideSpawnMenu ]
+  id: CentcomBlueShieldOfficerPreset
   components:
   - type: MindShield
   - type: ZombieImmune
