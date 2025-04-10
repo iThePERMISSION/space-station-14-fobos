@@ -791,3 +791,6 @@ ToxinChemistryBottle: ChemistryBottleToxin
 DrinkMoscowMuleGlass: DrinkMoscowMule
 DrinkEspressoMartiniGlass: DrinkEspressoMartini
 DrinkDaiquiriGlass: DrinkDaiquiri
+
+# 2025-04-11 - DS14
+RandomHumanoidSpawnerMobHumanCentcomBlueShieldOfficer: RandomHumanoidSpawnerCentcomBlueShieldOfficer

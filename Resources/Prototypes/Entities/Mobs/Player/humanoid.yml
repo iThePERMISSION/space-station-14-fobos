@@ -63,7 +63,7 @@
 - type: randomHumanoidSettings
   id: EventHumanoidERT
   parent: EventHumanoidMindShielded
-  # Nanotrasen are a bit racist, but FSCP more racist
+  # Nanotrasen are a bit racist
   speciesBlacklist:
     - Arachnid
     - Diona
@@ -745,49 +745,6 @@
     - type: Loadout
       prototypes: [ ERTEngineerGearGamma ]
 
-## Centcom Blue Shield
-
-- type: entity
-  id: RandomHumanoidSpawnerCentcomBlueShieldOfficer 
-  components:
-  - type: Sprite
-    layers:
-    - sprite: Markers/jobs.rsi
-      state: blueshield-low
-  - type: RandomHumanoidSpawner
-    settings: CentcomBlueShieldOfficerPreset
-
-- type: randomHumanoidSettings
-  parent: EventHumanoidERT
-  id: CentcomBlueShieldOfficerPreset
-  components:
-  - type: MindShield
-  - type: ZombieImmune
-  - type: AntagImmune
-  - type: GhostRole
-    name: ghost-role-information-blueshieldofficer-name
-    description: ghost-role-information-blueshieldofficer-description
-    rules: ghost-role-information-centcom-personal-rules
-    requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 252000 # 70 hours
-      - !type:DepartmentTimeRequirement
-        department: Security
-        time: 108000 # 30 hours
-      - !type:DepartmentTimeRequirement
-        department: Medical
-        time: 36000 # 10 hours 
-    raffle:
-      settings: short
-  - type: GhostTakeoverAvailable
-  - type: RandomMetadata
-    nameSegments:
-      - NamesFirstERT
-      - NamesLastERT
-  - type: Loadout
-    prototypes: [ CentcomBlueShieldGear ]
-    roleLoadout: [ RoleSurvivalEVA ]
-
 ## CBURN Agent
 - type: entity
   id: RandomHumanoidSpawnerCBURNAgent
@@ -871,6 +828,44 @@
       prototypes: [ CBURNSierraAgentGear ]
 
 # Central Command
+
+- type: entity
+  id: RandomHumanoidSpawnerCentcomBlueShieldOfficer 
+  components:
+    - type: Sprite
+      layers:
+      - sprite: Markers/jobs.rsi
+        state: blueshield-low
+    - type: RandomHumanoidSpawner
+      settings: CentcomBlueShieldOfficer
+
+- type: randomHumanoidSettings
+  parent: EventHumanoidERT
+  id: CentcomBlueShieldOfficer
+  components:
+    - type: GhostRole
+      name: ghost-role-information-blueshieldofficer-name
+      description: ghost-role-information-blueshieldofficer-description
+      rules: ghost-role-information-centcom-personal-rules
+      requirements:
+        - !type:OverallPlaytimeRequirement
+          time: 252000 # 70 hours
+        - !type:DepartmentTimeRequirement
+          department: Security
+          time: 108000 # 30 hours
+        - !type:DepartmentTimeRequirement
+          department: Medical
+          time: 36000 # 10 hours 
+      raffle:
+        settings: short
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirstERT
+      - NamesLastERT
+    - type: Loadout
+      prototypes: [ CentcomBlueShieldGear ]
+      roleLoadout: [ RoleSurvivalEVA ]
+
 - type: entity
   id: RandomHumanoidSpawnerCentcomOfficial
   components:
@@ -977,7 +972,6 @@
           time: 108000 # 30 hours
       raffle:
         settings: short
-    - type: GhostTakeoverAvailable
     - type: RandomMetadata
     - type: Loadout
       prototypes: [ CentcomOfficerGear ]
@@ -1046,4 +1040,3 @@
         settings: default
     - type: GhostTakeoverAvailable
     - type: Cluwne
-
