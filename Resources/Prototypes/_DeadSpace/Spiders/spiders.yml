@@ -575,6 +575,7 @@
     - Biological
   - type: Gun
     fireRate: 1
+    cycleable: false
     useKey: false
     selectedMode: SemiAuto
     availableModes:
