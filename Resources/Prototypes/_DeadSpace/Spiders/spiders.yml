@@ -575,7 +575,6 @@
     - Biological
   - type: Gun
     fireRate: 1
-    cycleable: false
     useKey: false
     selectedMode: SemiAuto
     availableModes:
@@ -583,6 +582,7 @@
     soundGunshot: /Audio/_DeadSpace/Necromorfs/bluet.ogg
   - type: BallisticAmmoProvider
     proto: BulletAcid
+    cycleable: false
     capacity: 1000
   - type: GhostTakeoverAvailable
 

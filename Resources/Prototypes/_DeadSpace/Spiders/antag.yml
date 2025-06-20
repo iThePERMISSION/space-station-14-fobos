@@ -47,7 +47,7 @@
       key_slots: !type:Container
   - type: EncryptionKeyHolder
     keySlots: 1
-    keysExtractionMethod: Destruction
+    keysUnlocked: false
   - type: Appearance
   - type: ContainerFill
     containers:
