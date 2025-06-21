@@ -1,6 +1,7 @@
 - type: npcFaction
   id: Dragon
   hostile:
+  - CentralCommand # DS14
   - NanoTrasen
   - Syndicate
   - Xeno
@@ -16,6 +17,8 @@
 
 - type: npcFaction
   id: NanoTrasen
+  friendly:
+  - CentralCommand # DS14
   hostile:
   - SimpleHostile
   - Syndicate
@@ -30,10 +33,27 @@
   - Blob # DS14
 
 - type: npcFaction
+  id: CentralCommand # DS14
+  hostile:
+  - SimpleHostile
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Dragon
+  - AllHostile
+  - Wizard
+  - Necromorfs # DS14
+  - SpiderTerror # DS14
+  - Blob 
+  - NanoTrasen
+
+- type: npcFaction
   id: Mouse
   hostile:
   - PetsNT
   - AllHostile
+  - Wizard
 
 - type: npcFaction
   id: Passive
@@ -46,10 +66,13 @@
   - Zombie
   - Xeno
   - AllHostile
+  - Wizard
+  - Dragon
 
 - type: npcFaction
   id: SimpleHostile
   hostile:
+  - CentralCommand # DS14
   - NanoTrasen
   - Syndicate
   - Passive
@@ -58,6 +81,7 @@
   - Revolutionary
   - AllHostile
   - Wizard
+  - Dragon
   - Necromorfs # DS14
   - SpiderTerror # DS14
   - SyndicateAgent # DS14-agents-faction
@@ -68,6 +92,7 @@
 - type: npcFaction
   id: Syndicate
   hostile:
+  - CentralCommand # DS14
   - NanoTrasen
   - SimpleHostile
   - Xeno
@@ -97,6 +122,7 @@
 - type: npcFaction
   id: Xeno
   hostile:
+  - CentralCommand # DS14
   - NanoTrasen
   - Syndicate
   - Passive
@@ -105,6 +131,7 @@
   - Revolutionary
   - AllHostile
   - Wizard
+  - Dragon
   - Necromorfs # DS14
   - SpiderTerror # DS14
   - Blob # DS14
@@ -113,6 +140,7 @@
 - type: npcFaction
   id: Zombie
   hostile:
+  - CentralCommand # DS14
   - NanoTrasen
   - SimpleNeutral
   - SimpleHostile
@@ -122,6 +150,7 @@
   - Revolutionary
   - AllHostile
   - Wizard
+  - Dragon
   - Necromorfs # DS14
   - SpiderTerror # DS14
   - Blob # DS14
@@ -130,6 +159,7 @@
 - type: npcFaction
   id: Revolutionary
   hostile:
+  - CentralCommand # DS14
   - NanoTrasen
   - Zombie
   - SimpleHostile
@@ -143,6 +173,7 @@
 - type: npcFaction
   id: AllHostile
   hostile:
+  - CentralCommand # DS14
   - NanoTrasen
   - Dragon
   - Mouse
@@ -163,9 +194,14 @@
 - type: npcFaction
   id: Wizard
   hostile:
+  - CentralCommand # DS14
   - NanoTrasen
   - Dragon
+  - Mouse
+  - Passive
+  - PetsNT
   - SimpleHostile
+  - SimpleNeutral
   - Syndicate
   - Xeno
   - Zombie
