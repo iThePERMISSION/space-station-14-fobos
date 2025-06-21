@@ -8,6 +8,9 @@
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: GhostTakeoverAvailable
+    - type: NpcFactionMember
+      factions:
+      - CentralCommand
 
 - type: randomHumanoidSettings
   id: EventHumanoidMindShielded
@@ -63,7 +66,7 @@
 - type: randomHumanoidSettings
   id: EventHumanoidERT
   parent: EventHumanoidMindShielded
-  # Nanotrasen are a bit racist, but FSCP more racist
+  # Nanotrasen are a bit racist
   speciesBlacklist:
     - Arachnid
     - Diona
@@ -133,59 +136,16 @@
   - type: GhostTakeoverAvailable
   - type: RandomMetadata
     nameSegments:
-    - SyndicateNamesNormal
+    - NamesSyndicateNormal
     - NamesLastDeathSquad
+    nameFormat: name-format-ert
+  - type: NpcFactionMember
+    factions:
+    - CentralCommand
   - type: Loadout
     prototypes: [ DeathSquadGear ]
   - type: TTS
     voice: Garithos
-
-## Centcom Blue Shield
-
-- type: entity
-  parent: MarkerBase
-  id: RandomHumanoidSpawnerMobHumanCentcomBlueShieldOfficer # Not actualy RandomHumanoidSpawner ¯\_(ツ)_/¯ x2
-  components:
-  - type: Sprite
-    layers:
-    - state: green
-    - sprite: Markers/jobs.rsi
-      state: blueshield-low
-  - type: ConditionalSpawner
-    prototypes:
-    - MobHumanCentcomBlueShieldOfficer
-
-- type: entity
-  parent: MobHuman
-  id: MobHumanCentcomBlueShieldOfficer
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: MindShield
-  - type: ZombieImmune
-  - type: AntagImmune
-  - type: AutoImplant
-    implants:
-    - TrackingImplant
-  - type: GhostRole
-    name: ghost-role-information-blueshieldofficer-name
-    description: ghost-role-information-blueshieldofficer-description
-    rules: ghost-role-information-centcom-personal-rules
-    requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 180000 # 50 hours
-      - !type:DepartmentTimeRequirement
-        department: Security
-        time: 72000 # 20 hours
-    raffle:
-      settings: short
-  - type: GhostTakeoverAvailable
-  - type: RandomMetadata
-    nameSegments:
-      - NamesFirstERT
-      - NamesLastERT
-  - type: Loadout
-    prototypes: [ CentcomBlueShieldGear ]
-    roleLoadout: [ RoleSurvivalEVA ]
 
 # ERT
 ## Leader
@@ -201,11 +161,12 @@
       nameSegments:
       - NamesFirstERTLeader
       - NamesLastERT
+      nameFormat: name-format-ert
     - type: RandomHumanoidSpawner
-      settings: ERTLeaderAmberPreset
+      settings: ERTLeaderAmber
 
 - type: randomHumanoidSettings
-  id: ERTLeaderAmberPreset
+  id: ERTLeaderAmber
   parent: EventHumanoidERT
   components:
     - type: GhostRole
@@ -231,6 +192,7 @@
       nameSegments:
       - NamesFirstERTLeader
       - NamesLastERT
+      nameFormat: name-format-ert
 
 ### Red
 - type: entity
@@ -242,10 +204,10 @@
       sprite: Markers/jobs.rsi
       state: ertleadereva
     - type: RandomHumanoidSpawner
-      settings: ERTLeaderRedPreset
+      settings: ERTLeaderRed
 
 - type: randomHumanoidSettings
-  id: ERTLeaderRedPreset
+  id: ERTLeaderRed
   parent: EventHumanoidERT
   components:
     - type: GhostRole
@@ -271,6 +233,7 @@
       nameSegments:
       - NamesFirstERTLeader
       - NamesLastERT
+      nameFormat: name-format-ert
 
 ### Gamma
 - type: entity
@@ -282,10 +245,10 @@
       sprite: Markers/jobs.rsi
       state: ertleadereva
     - type: RandomHumanoidSpawner
-      settings: ERTLeaderGammaPreset
+      settings: ERTLeaderGamma
 
 - type: randomHumanoidSettings
-  id: ERTLeaderGammaPreset
+  id: ERTLeaderGamma
   parent: EventHumanoidERT
   components:
     - type: GhostRole
@@ -311,6 +274,7 @@
       nameSegments:
       - NamesFirstERTLeader
       - NamesLastERT
+      nameFormat: name-format-ert
 
 ### CBURN
 - type: entity
@@ -322,10 +286,10 @@
       sprite: Markers/jobs.rsi
       state: cburn
     - type: RandomHumanoidSpawner
-      settings: CBURNLeaderPreset
+      settings: CBURNLeader
 
 - type: randomHumanoidSettings
-  id: CBURNLeaderPreset
+  id: CBURNLeader
   parent: EventHumanoidERTZombieImmune
   components:
     - type: GhostRole
@@ -349,49 +313,10 @@
       nameSegments:
       - NamesFirstERTLeader
       - NamesLastERT
+      nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ CBURNLeaderGear ]
       roleLoadout: [ RoleSurvivalExtended ]
-
-### CBURN Sierra
-- type: entity
-  id: RandomHumanoidSpawnerCBURNSierraLeader
-  parent: RandomHumanoidSpawnerERTLeaderAmber
-  name: CBURN Sierra leader
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: cburn
-    - type: RandomHumanoidSpawner
-      settings: CBURNSierraLeaderPreset
-
-- type: randomHumanoidSettings
-  id: CBURNSierraLeaderPreset
-  parent: EventHumanoidERTZombieImmune
-  components:
-    - type: GhostRole
-      name: ghost-role-information-cburn-leader-name
-      description: ghost-role-information-cburn-leader-description
-      rules: ghost-role-information-nonantagonist-rules
-      requirements:
-        - !type:DepartmentTimeRequirement
-          department: Medical
-          time: 36000 # 10 hours
-        - !type:DepartmentTimeRequirement
-          department: Security
-          time: 72000 # 20 hours
-        - !type:DepartmentTimeRequirement
-          department: Command
-          time: 36000 # 10 hours
-      raffle:
-        settings: short
-      job: CBURNLeader
-    - type: Loadout
-      prototypes: [ CBURNSierraLeaderGear ]
-    - type: RandomMetadata
-      nameSegments:
-      - NamesFirstERTLeader
-      - NamesLastERT
 
 ## Security
 ### Amber
@@ -407,11 +332,12 @@
       nameSegments:
       - NamesFirstERT
       - NamesLastERT
+      nameFormat: name-format-ert
     - type: RandomHumanoidSpawner
-      settings: ERTSecurityAmberPreset
+      settings: ERTSecurityAmber
 
 - type: randomHumanoidSettings
-  id: ERTSecurityAmberPreset
+  id: ERTSecurityAmber
   parent: EventHumanoidERT
   components:
     - type: GhostRole
@@ -432,6 +358,7 @@
       nameSegments:
       - NamesFirstERT
       - NamesLastERT
+      nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTSecurityGearAmber ]
 
@@ -442,10 +369,10 @@
   name: ERT security red
   components:
     - type: RandomHumanoidSpawner
-      settings: ERTSecurityRedPreset
+      settings: ERTSecurityRed
 
 - type: randomHumanoidSettings
-  id: ERTSecurityRedPreset
+  id: ERTSecurityRed
   parent: EventHumanoidERT
   components:
     - type: GhostRole
@@ -472,10 +399,10 @@
   name: ERT security gamma
   components:
     - type: RandomHumanoidSpawner
-      settings: ERTSecurityGammaPreset
+      settings: ERTSecurityGamma
 
 - type: randomHumanoidSettings
-  id: ERTSecurityGammaPreset
+  id: ERTSecurityGamma
   parent: EventHumanoidERT
   components:
     - type: GhostRole
@@ -509,11 +436,12 @@
       nameSegments:
       - NamesFirstERT
       - NamesLastERT
+      nameFormat: name-format-ert
     - type: RandomHumanoidSpawner
-      settings: ERTMedicalAmberPreset
+      settings: ERTMedicalAmber
 
 - type: randomHumanoidSettings
-  id: ERTMedicalAmberPreset
+  id: ERTMedicalAmber
   parent: EventHumanoidERT
   components:
     - type: GhostRole
@@ -534,6 +462,7 @@
       nameSegments:
       - NamesFirstERT
       - NamesLastERT
+      nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTMedicalGearAmber ]
 
@@ -544,10 +473,10 @@
   name: ERT medic red
   components:
     - type: RandomHumanoidSpawner
-      settings: ERTMedicalRedPreset
+      settings: ERTMedicalRed
 
 - type: randomHumanoidSettings
-  id: ERTMedicalRedPreset
+  id: ERTMedicalRed
   parent: EventHumanoidERT
   components:
     - type: GhostRole
@@ -574,10 +503,10 @@
   name: ERT medic gamma
   components:
     - type: RandomHumanoidSpawner
-      settings: ERTMedicalGammaPreset
+      settings: ERTMedicalGamma
 
 - type: randomHumanoidSettings
-  id: ERTMedicalGammaPreset
+  id: ERTMedicalGamma
   parent: EventHumanoidERT
   components:
     - type: GhostRole
@@ -611,11 +540,12 @@
       nameSegments:
       - NamesFirstERT
       - NamesLastERT
+      nameFormat: name-format-ert
     - type: RandomHumanoidSpawner
-      settings: ERTJanitorAmberPreset
+      settings: ERTJanitorAmber
 
 - type: randomHumanoidSettings
-  id: ERTJanitorAmberPreset
+  id: ERTJanitorAmber
   parent: EventHumanoidERT
   components:
     - type: GhostRole
@@ -633,6 +563,7 @@
       nameSegments:
       - NamesFirstERT
       - NamesLastERT
+      nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTJanitorGearAmber ]
 
@@ -643,10 +574,10 @@
   name: ERT janitor red
   components:
     - type: RandomHumanoidSpawner
-      settings: ERTJanitorRedPreset
+      settings: ERTJanitorRed
 
 - type: randomHumanoidSettings
-  id: ERTJanitorRedPreset
+  id: ERTJanitorRed
   parent: EventHumanoidERT
   components:
     - type: GhostRole
@@ -670,10 +601,10 @@
   name: ERT janitor gamma
   components:
     - type: RandomHumanoidSpawner
-      settings: ERTJanitorGammaPreset
+      settings: ERTJanitorGamma
 
 - type: randomHumanoidSettings
-  id: ERTJanitorGammaPreset
+  id: ERTJanitorGamma
   parent: EventHumanoidERT
   components:
     - type: GhostRole
@@ -704,11 +635,12 @@
       nameSegments:
       - NamesFirstERT
       - NamesLastERT
+      nameFormat: name-format-ert
     - type: RandomHumanoidSpawner
-      settings: ERTEngineerAmberPreset
+      settings: ERTEngineerAmber
 
 - type: randomHumanoidSettings
-  id: ERTEngineerAmberPreset
+  id: ERTEngineerAmber
   parent: EventHumanoidERT
   components:
     - type: GhostRole
@@ -729,6 +661,7 @@
       nameSegments:
       - NamesFirstERT
       - NamesLastERT
+      nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTEngineerGearAmber ]
 
@@ -739,10 +672,10 @@
   name: ERT engineer red
   components:
     - type: RandomHumanoidSpawner
-      settings: ERTEngineerRedPreset
+      settings: ERTEngineerRed
 
 - type: randomHumanoidSettings
-  id: ERTEngineerRedPreset
+  id: ERTEngineerRed
   parent: EventHumanoidERT
   components:
     - type: GhostRole
@@ -769,10 +702,10 @@
   name: ERT engineer gamma
   components:
     - type: RandomHumanoidSpawner
-      settings: ERTEngineerGammaPreset
+      settings: ERTEngineerGamma
 
 - type: randomHumanoidSettings
-  id: ERTEngineerGammaPreset
+  id: ERTEngineerGamma
   parent: EventHumanoidERT
   components:
     - type: GhostRole
@@ -805,11 +738,12 @@
       nameSegments:
       - NamesFirstERT
       - NamesLastERT
+      nameFormat: name-format-ert
     - type: RandomHumanoidSpawner
-      settings: CBURNAgentPreset
+      settings: CBURNAgent
 
 - type: randomHumanoidSettings
-  id: CBURNAgentPreset
+  id: CBURNAgent
   parent: EventHumanoidERTZombieImmune
   components:
     - type: GhostRole
@@ -830,51 +764,50 @@
       nameSegments:
       - NamesFirstERT
       - NamesLastERT
+      nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ CBURNAgentGear ]
 
-## CBURN Sierra Agent
+# Central Command
+
 - type: entity
-  id: RandomHumanoidSpawnerCBURNSierraAgent
-  parent: RandomHumanoidSpawnerCBURNSierraLeader
-  name: CBURN Agent
+  id: RandomHumanoidSpawnerCentcomBlueShieldOfficer 
   components:
     - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: cburn
-    - type: RandomMetadata
-      nameSegments:
-      - NamesFirstERT
-      - NamesLastERT
+      layers:
+      - sprite: Markers/jobs.rsi
+        state: blueshield-low
     - type: RandomHumanoidSpawner
-      settings: CBURNSierraAgentPreset
+      settings: CentcomBlueShieldOfficer
 
 - type: randomHumanoidSettings
-  id: CBURNSierraAgentPreset
-  parent: EventHumanoidERTZombieImmune
+  parent: EventHumanoidERT
+  id: CentcomBlueShieldOfficer
   components:
     - type: GhostRole
-      name: ghost-role-information-cburn-agent-name
-      description: ghost-role-information-cburn-agent-description
-      rules: ghost-role-information-nonantagonist-rules
+      name: ghost-role-information-blueshieldofficer-name
+      description: ghost-role-information-blueshieldofficer-description
+      rules: ghost-role-information-centcom-personal-rules
       requirements:
-        - !type:DepartmentTimeRequirement
-          department: Medical
-          time: 14400 # 4 hours
+        - !type:OverallPlaytimeRequirement
+          time: 252000 # 70 hours
         - !type:DepartmentTimeRequirement
           department: Security
-          time: 50400 # 14 hours
+          time: 108000 # 30 hours
+        - !type:DepartmentTimeRequirement
+          department: Medical
+          time: 36000 # 10 hours 
       raffle:
         settings: short
-      job: CBURNAgent
     - type: RandomMetadata
       nameSegments:
       - NamesFirstERT
       - NamesLastERT
+      nameFormat: name-format-ert
     - type: Loadout
-      prototypes: [ CBURNSierraAgentGear ]
+      prototypes: [ CentcomBlueShieldGear ]
+      roleLoadout: [ RoleSurvivalEVA ]
 
-# Central Command
 - type: entity
   id: RandomHumanoidSpawnerCentcomOfficial
   components:
@@ -981,7 +914,6 @@
           time: 108000 # 30 hours
       raffle:
         settings: short
-    - type: GhostTakeoverAvailable
     - type: RandomMetadata
     - type: Loadout
       prototypes: [ CentcomOfficerGear ]
@@ -997,7 +929,7 @@
       sprite: Mobs/Species/Human/parts.rsi
       state: full
     - type: RandomMetadata
-      nameSegments: [ adt_nukeagent_names ]
+      nameSegments: [ NamesDeathCommando ]
     - type: RandomHumanoidSpawner
       settings: SyndicateAgent
 
@@ -1035,8 +967,8 @@
       settings: Cluwne
     - type: RandomMetadata
       nameSegments:
-      - names_first
-      - names_last_male
+      - NamesFirstMale
+      - NamesLastMale
 
 - type: randomHumanoidSettings
   id: Cluwne
@@ -1050,4 +982,3 @@
         settings: default
     - type: GhostTakeoverAvailable
     - type: Cluwne
-
