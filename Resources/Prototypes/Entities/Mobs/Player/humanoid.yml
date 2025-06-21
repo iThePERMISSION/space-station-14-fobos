@@ -8,9 +8,6 @@
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: GhostTakeoverAvailable
-    - type: NpcFactionMember
-      factions:
-      - CentralCommand
 
 - type: randomHumanoidSettings
   id: EventHumanoidMindShielded
@@ -18,6 +15,9 @@
   components:
     - type: MindShield
     - type: AntagImmune
+    - type: NpcFactionMember
+      factions:
+      - CentralCommand
 
 - type: randomHumanoidSettings
   id: EventHumanoidMindShieldedHuman
