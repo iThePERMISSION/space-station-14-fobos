@@ -7,7 +7,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-  - DefaultWhiteUnderwear # DS14-Underwear
+  - BlueShieldOfficerUnderwear # DS14-Underwear
 
 # Civilian
 - type: roleLoadout
@@ -110,7 +110,9 @@
   - SurvivalBrigmedic
   - Trinkets
   - GroupSpeciesBreathTool
+  - BrigmedicSocks # DS14-Underwear
   - BrigmedicUnderwear # DS14-Underwear
+  - BrigMedicMedal # DS14-Medal
 
 - type: roleLoadout
   id: JobSeniorOfficer
@@ -118,19 +120,23 @@
   - GroupTankHarness
   - SeniorOfficerJumpsuit
   - SeniorOfficerBackpack
-  - SecurityOuterClothing
+  - SeniorOfficerOuterClothing
   - SecurityShoes
   - SeniorOfficerPDA
   - SecurityBelt
   - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathTool
+  - SeniorOfficerNeck
+  - SeniorOfficerSocks # DS14-Underwear
   - SeniorOfficerUnderwear # DS14-Underwear
+  - SeniorOfficerMedal # DS14-Medal
 
 - type: roleLoadout
   id: JobSecurityPilot
   groups:
   - GroupTankHarness
+  - SecurityHead
   - SecurityJumpsuit
   - SecurityBackpack
   - SecurityShoes
@@ -138,7 +144,9 @@
   - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathTool
+  - SecuritySocks # DS14-Underwear
   - SecurityUnderwear # DS14-Underwear
+  - SecurityPilotMedal # DS14-Medal
 
 # Medical
 - type: roleLoadout

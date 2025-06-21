@@ -3,6 +3,7 @@ loadout-group-default-white-underwear = Стандартное нижнее бе
 # Command
 loadout-group-blue-shield-officer-jumpsuit = Синий щит, комбинезон
 loadout-group-blue-shield-officer-backpack = Синий щит, рюкзак
+loadout-group-blue-shield-officer-underwear = Синий щит, нижнее бельё
 # Civilian
 loadout-group-senior-administrator-jumpsuit = Менеджер, комбинезон
 # Cargo
@@ -25,10 +26,21 @@ loadout-group-senior-researcher-underwear = Ведущий учёный, ниж�
 # Security
 loadout-group-brigmedic-jumpsuit = Бригмедик, комбинезон
 loadout-group-brigmedic-backpack = Бригмедик, рюкзак
+loadout-group-brigmedic-socks = Бригмедик, ноги
 loadout-group-brigmedic-underwear = Бригмедик, нижнее бельё
+loadout-group-brigmedic-medal = Бригмедик, медаль
 loadout-group-senior-officer-jumpsuit = Инструктор СБ, комбинезон
 loadout-group-senior-officer-backpack = Инструктор СБ, рюкзак
+loadout-group-senior-officer-outerclothing = Инструктор СБ, верхняя одежда
+loadout-group-senior-officer-neck = Инструктор СБ, мантия
+loadout-group-senior-officer-socks = Инструктор СБ, ноги
 loadout-group-senior-officer-underwear = Инструктор СБ, нижнее бельё
+loadout-group-senior-officer-medal = Инструктор СБ, медаль
+loadout-group-security-officer-medal = Офицер СБ, медаль
+loadout-group-detective-medal = Детектив, медаль
+loadout-group-warden-medal = Смотритель, медаль
+loadout-group-head-of-security-medal = Глава Службы Безопасности, медаль
+loadout-group-security-pilot-medal = Пилот СБ, медаль
 # Medical
 loadout-group-senior-physician-head = Ведущий врач, голова
 loadout-group-senior-physician-jumpsuit = Ведущий врач, комбинезон

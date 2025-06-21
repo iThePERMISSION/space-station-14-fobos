@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Content.Server.Administration.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Maps;
 using Content.Server.Shuttles.Components;
@@ -21,6 +22,7 @@ using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.IoC;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
+using Robust.Shared.Map.Events;
 
 namespace Content.IntegrationTests.Tests
 {
@@ -38,7 +40,8 @@ namespace Content.IntegrationTests.Tests
 
         private static readonly string[] Grids =
         {
-            "/Maps/centcomm.yml"
+            "/Maps/centcomm.yml",
+            AdminTestArenaSystem.ArenaMapPath
         };
 
         private static readonly string[] DoNotMapWhitelist =
@@ -73,7 +76,7 @@ namespace Content.IntegrationTests.Tests
             "/Maps/Shuttles/ERT/janitors.yml", // ERT shuttle
             "/Maps/Shuttles/ERT/red.yml", // ERT shuttle
             "/Maps/Shuttles/ERT/sierra.yml", // ERT shuttle
-            "/Maps/ds_typan.yml",
+            "/Maps/ds_taipan.yml",
         };
 
         private static readonly string[] GameMaps =
@@ -104,7 +107,7 @@ namespace Content.IntegrationTests.Tests
             "Saltern",
             "Train",
             "Cog",
-            // "DSTypan",
+            // "DSTaipan",
             "Amber",
             "Gate",
             "Amber",
@@ -117,7 +120,8 @@ namespace Content.IntegrationTests.Tests
 
         private static readonly string[] GameMapsExcludedFromTests =
         {
-            "DSTypan", //remap in progress
+            "Aspid", //remap in progress
+            "DSTaipan", //remap in progress
             "Elkridge" //remap in progress
         };
 
@@ -261,9 +265,12 @@ namespace Content.IntegrationTests.Tests
             }
 
             var deps = server.ResolveDependency<IEntitySystemManager>().DependencyCollection;
+            var ev = new BeforeEntityReadEvent();
+            server.EntMan.EventBus.RaiseEvent(EventSource.Local, ev);
+
             foreach (var map in v7Maps)
             {
-                Assert.That(IsPreInit(map, loader, deps));
+                Assert.That(IsPreInit(map, loader, deps, ev.RenamedPrototypes, ev.DeletedPrototypes));
             }
 
             // Check that the test actually does manage to catch post-init maps and isn't just blindly passing everything.
@@ -276,12 +283,12 @@ namespace Content.IntegrationTests.Tests
             // First check that a pre-init version passes
             var path = new ResPath($"{nameof(NoSavedPostMapInitTest)}.yml");
             Assert.That(loader.TrySaveMap(id, path));
-            Assert.That(IsPreInit(path, loader, deps));
+            Assert.That(IsPreInit(path, loader, deps, ev.RenamedPrototypes, ev.DeletedPrototypes));
 
             // and the post-init version fails.
             await server.WaitPost(() => mapSys.InitializeMap(id));
             Assert.That(loader.TrySaveMap(id, path));
-            Assert.That(IsPreInit(path, loader, deps), Is.False);
+            Assert.That(IsPreInit(path, loader, deps, ev.RenamedPrototypes, ev.DeletedPrototypes), Is.False);
 
             await pair.CleanReturnAsync();
         }
@@ -314,7 +321,11 @@ namespace Content.IntegrationTests.Tests
             });
         }
 
-        private bool IsPreInit(ResPath map, MapLoaderSystem loader, IDependencyCollection deps)
+        private bool IsPreInit(ResPath map,
+            MapLoaderSystem loader,
+            IDependencyCollection deps,
+            Dictionary<string, string> renamedPrototypes,
+            HashSet<string> deletedPrototypes)
         {
             if (!loader.TryReadFile(map, out var data))
             {
@@ -322,7 +333,12 @@ namespace Content.IntegrationTests.Tests
                 return false;
             }
 
-            var reader = new EntityDeserializer(deps, data, DeserializationOptions.Default);
+            var reader = new EntityDeserializer(deps,
+                data,
+                DeserializationOptions.Default,
+                renamedPrototypes,
+                deletedPrototypes);
+
             if (!reader.TryProcessData())
             {
                 Assert.Fail($"Failed to process {map}");
@@ -502,7 +518,7 @@ namespace Content.IntegrationTests.Tests
             var protoMan = server.ResolveDependency<IPrototypeManager>();
 
             var gameMaps = protoMan.EnumeratePrototypes<GameMapPrototype>()
-                .Where(x => !pair.IsTestPrototype(x) && !GameMapsExcludedFromTests.Contains(x.ID)) // DS14: temp exclude broken Typan map file
+                .Where(x => !pair.IsTestPrototype(x) && !GameMapsExcludedFromTests.Contains(x.ID)) // DS14: temp exclude broken Taipan map file
                 .Select(x => x.ID)
                 .ToHashSet();
 

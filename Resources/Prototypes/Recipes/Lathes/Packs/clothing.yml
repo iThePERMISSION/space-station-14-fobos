@@ -157,6 +157,7 @@
   - ClothingOuterWinterClown
   - ClothingOuterWinterMime
   - ClothingOuterWinterCoat
+  - ClothingOuterWinterCoatLong # DS14
   - ClothingOuterWinterJani
   - ClothingOuterWinterBar
   - ClothingOuterWinterChef
@@ -237,3 +238,4 @@
   - ClothingOuterWinterSyndie
   - ClothingOuterWinterSyndieCap
   - BedsheetSyndie
+  - DoubleBedsheetSyndie # DS14
