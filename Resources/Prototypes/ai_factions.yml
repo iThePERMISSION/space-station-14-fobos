@@ -33,22 +33,6 @@
   - Blob # DS14
 
 - type: npcFaction
-  id: CentralCommand # DS14
-  hostile:
-  - SimpleHostile
-  - Syndicate
-  - Xeno
-  - Zombie
-  - Revolutionary
-  - Dragon
-  - AllHostile
-  - Wizard
-  - Necromorfs # DS14
-  - SpiderTerror # DS14
-  - Blob 
-  - NanoTrasen
-
-- type: npcFaction
   id: Mouse
   hostile:
   - PetsNT
