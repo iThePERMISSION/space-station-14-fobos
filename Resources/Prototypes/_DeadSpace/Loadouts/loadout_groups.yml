@@ -11,10 +11,24 @@
 
 # Command
 - type: loadoutGroup
+  id: BlueShieldOfficerBackpack
+  name: loadout-group-blue-shield-officer-backpack
+  hidden: true
+  loadouts:
+  - BlueShieldOfficerBackpack
+
+- type: loadoutGroup
   id: BlueShieldOfficerJumpsuit
   name: loadout-group-blue-shield-officer-jumpsuit
   loadouts:
   - BlueShieldOfficerJumpsuit
+
+- type: loadoutGroup
+  id: BlueShieldOfficerNeck
+  name: loadout-group-blue-shield-officer-neck
+  loadouts:
+  - BlueShieldOfficerCloak
+  - BlueShieldOfficerMantle
 
 - type: loadoutGroup
   id: BlueShieldOfficerUnderwear
