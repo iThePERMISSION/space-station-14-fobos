@@ -27,12 +27,6 @@
     primaryAccount: Taipan
   - type: StationCargoOrderDatabase
     orders:
-      Cargo: [ ]
-      Engineering: [ ]
-      Medical: [ ]
-      Science: [ ]
-      Security: [ ]
-      Service: [ ]
       Taipan: [ ]
   - type: StationCargoBountyDatabase
     isTaipan: true
@@ -150,6 +144,13 @@
   components:
     - type: AlertLevel
       alertLevelPrototype: stationAlerts
+
+- type: entity
+  id: BaseTaipanStationAlertLevels
+  abstract: true
+  components:
+    - type: AlertLevel
+      alertLevelPrototype: taipanStationAlerts
 
 - type: entity
   id: BaseStationERTCall # DS14
