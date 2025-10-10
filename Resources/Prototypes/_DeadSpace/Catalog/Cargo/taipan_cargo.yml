@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: LivestockGiantSpiderSpace
+  icon:
+    sprite: Mobs/Animals/spacespider.rsi
+    state: spacespider
+  product: CrateNPCGiantSpiderSpace
+  cost: 4000
+  category: cargoproduct-category-name-livestock
+  group: market

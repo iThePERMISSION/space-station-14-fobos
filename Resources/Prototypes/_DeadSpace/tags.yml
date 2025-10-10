@@ -71,6 +71,9 @@
   id: MagazineTommyGun
 
 - type: Tag
+  id: GiantSpiderSpace
+
+- type: Tag
   id: Plasteel
 
 - type: Tag
