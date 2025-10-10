@@ -17,7 +17,7 @@
       chemicals:
         maxVol: 15
         reagents:
-        - ReagentId: XenoBlood
+        - ReagentId: AcidicBlood
           Quantity: 15
   - type: Timer
   - type: TimedSpawner
@@ -130,5 +130,5 @@
       food:
         maxVol: 2
         reagents:
-        - ReagentId: XenoBlood
+        - ReagentId: AcidicBlood
           Quantity: 1
