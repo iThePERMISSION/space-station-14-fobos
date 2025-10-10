@@ -14,7 +14,7 @@
     animation: WeaponArcPunch
   - type: SolutionContainerManager
     solutions:
-      solutionArea:
+      chemicals:
         maxVol: 15
         reagents:
         - ReagentId: XenoBlood
