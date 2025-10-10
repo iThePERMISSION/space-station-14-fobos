@@ -23,7 +23,7 @@
   - type: TimedSpawner
     prototypes:
     - MobSpiderTerrorGuardian
-    - MobSpiderTerrorGuardianHeroicKingBlood
+    - MobSpiderTerrorGuardianKingBlood
     intervalSeconds: 600
     minimumEntitiesSpawned: 1
     maximumEntitiesSpawned: 1
