@@ -47,6 +47,9 @@
   id: FittableInBackpackCase
 
 - type: Tag
+  id: GiantSpiderSpace
+
+- type: Tag
   id: HardHat
 
 - type: Tag
@@ -69,9 +72,6 @@
 
 - type: Tag
   id: MagazineTommyGun
-
-- type: Tag
-  id: GiantSpiderSpace
 
 - type: Tag
   id: Plasteel
