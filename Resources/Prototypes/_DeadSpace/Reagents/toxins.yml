@@ -1,14 +1,4 @@
 - type: reagent
-  parent: SulfuricAcid
-  id: XenoBlood
-  name: reagent-name-xeno-blood
-  group: Toxins
-  desc: reagent-desc-fluorosulfuric-acid
-  physicalDesc: reagent-physical-desc-strong-smelling
-  flavor: acid
-  color: "#00ff1a"
-
-- type: reagent
   id: Chitoectesin
   name: reagent-name-сhitoectesin
   group: Toxins
