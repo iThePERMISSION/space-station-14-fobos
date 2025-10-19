@@ -231,7 +231,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ComputerShuttle
+- proto: RandomComputerShuttleSpawner
   entities:
   - uid: 19
     components:

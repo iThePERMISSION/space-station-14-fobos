@@ -613,3 +613,14 @@
     radius: 1.5
     energy: 1.6
     color: "#8B0000"
+
+- type: entity
+  parent: ComputerShuttle
+  id: ComputerShuttleOnTaipan
+  suffix: Тайпан
+  name: консоль управления шаттлом
+  description: Используется для пилотирования корабля.
+  components:
+  - type: Tag
+    tags:
+      - Syndicate

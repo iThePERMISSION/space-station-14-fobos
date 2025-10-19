@@ -1,0 +1,13 @@
+- type: entity
+  id: RandomComputerShuttleSpawner
+  parent: MarkerBase
+  name: спавнер случайной консоли управления шаттлом
+  components:
+  - type: RandomSpawner
+    chance: 1
+    prototypes:
+    - ComputerShuttle
+    rareChance: 0.05
+    rarePrototypes:
+    - ComputerTaipanShuttle
+    offset: 0.0

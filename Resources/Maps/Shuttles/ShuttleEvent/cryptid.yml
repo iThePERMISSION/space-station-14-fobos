@@ -2021,7 +2021,7 @@ entities:
     - type: Transform
       pos: 11.5,3.5
       parent: 1
-- proto: ComputerShuttle
+- proto: RandomComputerShuttleSpawner
   entities:
   - uid: 88
     components:

@@ -1240,7 +1240,7 @@ entities:
     - type: Transform
       pos: 9.5,4.5
       parent: 1
-- proto: ComputerShuttle
+- proto: RandomComputerShuttleSpawner
   entities:
   - uid: 390
     components:
