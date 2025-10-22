@@ -29,6 +29,9 @@
   id: CleanerGrenade
 
 - type: Tag
+  id: Candy
+
+- type: Tag
   id: CompactDefibrillator
 
 - type: Tag
@@ -93,6 +96,9 @@
 
 - type: Tag
   id: SyndieSabre
+
+- type: Tag
+  id: SmallJelly
 
 - type: Tag
   id: ToySword

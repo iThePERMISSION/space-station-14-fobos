@@ -1,0 +1,1091 @@
+- type: entity
+  parent: BaseItem
+  id: FoodCandyBase
+  abstract: true
+  components:
+  - type: Food
+  - type: Tag
+    tags:
+      - Candy
+  - type: Sprite
+    sprite: /Uploaded/sweets.rsi # _DeadSpace/Objects/Consumable/Food/sweets.rsi
+    state: nougat
+  - type: Item
+    size: Tiny
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+
+# Другие сладости
+- type: entity
+  parent: FoodCandyBase
+  id: FoodCandyNougat
+  name: нуга
+  description: Нагретый и застывший сахар с добавлением некоторых видов ореха.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+
+- type: entity
+  parent: FoodCandyBase
+  id: FoodCaramel
+  name: карамель
+  description: Нагретый и застывший сахар. Что может быть лучше?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: Sprite
+    state: caramel
+
+- type: entity
+  parent: FoodCandyBase
+  id: FoodCandyCane
+  name: сахарная трость
+  description: Чистый сахар, но в красивой форме.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 10
+  - type: Sprite
+    state: candycane
+
+- type: entity
+  parent: FoodCandyBase
+  id: FoodCandyCorn
+  name: сахарная кукурудза
+  description: Много маленький зерён кукурдзы, но совсем не полезные.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 7
+  - type: Sprite
+    state: candycorn
+
+- type: entity
+  parent: FoodCandyBase
+  id: FoodCandyPineapple
+  name: конфета ананас
+  description: Ананас, но ввиде конфеты.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 7
+  - type: Sprite
+    state: candied_pineapple
+
+# Сахарная вата
+- type: entity
+  parent: FoodCandyBase
+  id: FoodCottoncandy
+  name: белая сахарная вата
+  components:
+  - type: Sprite
+    state: cottoncandy_plain
+  - type: Item
+    sprite: /Uploaded/sweets.rsi
+    heldPrefix: cottoncandy_plain
+  - type: FlavorProfile
+    flavors:
+      - syrupy
+  - type: Edible
+    transferAmount: 1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 8
+
+- type: entity
+  parent: FoodCottoncandy
+  id: FoodCottoncandyBerry
+  name: синяя сахарная вата
+  description: Сбежавший кусочек облака, которое может быть любого цвета. Очень липкое.
+  components:
+  - type: Sprite
+    state: cottoncandy_blue
+  - type: Item
+    heldPrefix: cottoncandy_blue
+
+- type: entity
+  parent: FoodCottoncandy
+  id: FoodCottoncandyApple
+  name: зеленая сахарная вата
+  components:
+  - type: Sprite
+    state: cottoncandy_green
+  - type: Item
+    heldPrefix: cottoncandy_green
+
+- type: entity
+  parent: FoodCottoncandy
+  id: FoodCottoncandyOrange
+  name: оранжевая сахарная вата
+  components:
+  - type: Sprite
+    state: cottoncandy_orange
+  - type: Item
+    heldPrefix: cottoncandy_orange
+
+- type: entity
+  parent: FoodCottoncandy
+  id: FoodCottoncandyWatermelon
+  name: розовая сахарная вата
+  components:
+  - type: Sprite
+    state: cottoncandy_pink
+  - type: Item
+    heldPrefix: cottoncandy_pink
+
+- type: entity
+  parent: FoodCottoncandy
+  id: FoodCottoncandyEggplant
+  name: фиолетовая сахарная вата
+  components:
+  - type: Sprite
+    state: cottoncandy_purple
+  - type: Item
+    heldPrefix: cottoncandy_eggplant
+
+- type: entity
+  parent: FoodCottoncandy
+  id: FoodCottoncandyRainbowCannabis
+  name: радужная сахарная вата
+  components:
+  - type: Sprite
+    state: cottoncandy_rainbow
+  - type: Item
+    heldPrefix: cottoncandy_rainbow
+
+- type: entity
+  parent: FoodCottoncandy
+  id: FoodCottoncandyCherry
+  name: красная сахарная вата
+  components:
+  - type: Sprite
+    state: cottoncandy_red
+  - type: Item
+    heldPrefix: cottoncandy_red
+
+- type: entity
+  parent: FoodCottoncandy
+  id: FoodCottoncandyBanana
+  name: желтая сахарная вата
+  components:
+  - type: Sprite
+    state: cottoncandy_yellow
+  - type: Item
+    heldPrefix: cottoncandy_yellow
+
+# Желейные медведи
+- type: entity
+  parent: FoodCandyBase
+  id: FoodGbear
+  name: желейный медведь
+  description: Маленький упругий источник радости.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chewy
+  - type: Sprite
+    state: gbear
+  - type: Tag
+    tags:
+    - SmallJelly
+
+- type: entity
+  parent: FoodGbear
+  id: FoodBerryGbear
+  name: синий желейный медведь
+  components:
+  - type: Sprite
+    state: gbear_blue
+
+- type: entity
+  parent: FoodGbear
+  id: FoodAppleGbear
+  name: зеленый желейный медведь
+  components:
+  - type: Sprite
+    state: gbear_green
+
+- type: entity
+  parent: FoodGbear
+  id: FoodOrangeGbear
+  name: оранжевый желейный медведь
+  components:
+  - type: Sprite
+    state: gbear_orange
+
+- type: entity
+  parent: FoodGbear
+  id: FoodWatermelonGbear
+  name: розовый желейный медведь
+  components:
+  - type: Sprite
+    state: gbear_pink
+
+- type: entity
+  parent: FoodGbear
+  id: FoodEggplantGbear
+  name: фиолетовый желейный медведь
+  components:
+  - type: Sprite
+    state: gbear_purple
+
+- type: entity
+  parent: FoodGbear
+  id: FoodRainbowCannabisGbear
+  name: радужный желейный медведь
+  components:
+  - type: Sprite
+    state: gbear_rainbow
+
+- type: entity
+  parent: FoodGbear
+  id: FoodCherryGbear
+  name: красный желейный медведь
+  components:
+  - type: Sprite
+    state: gbear_red
+
+- type: entity
+  parent: FoodGbear
+  id: FoodBananaGbear
+  name: желтый желейный медведь
+  components:
+  - type: Sprite
+    state: gbear_yellow
+
+# Желейные черви
+- type: entity
+  parent: FoodCandyBase
+  id: FoodGworm
+  name: желейный червяк
+  description: Смешно растягивается.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chewy
+  - type: Sprite
+    state: gworm
+  - type: Tag
+    tags:
+    - SmallJelly
+
+- type: entity
+  parent: FoodGworm
+  id: FoodBerryGworm
+  name: синий желейный червяк
+  components:
+  - type: Sprite
+    state: gworm_blue
+
+- type: entity
+  parent: FoodGworm
+  id: FoodAppleGworm
+  name: зеленый желейный червяк
+  components:
+  - type: Sprite
+    state: gworm_green
+
+- type: entity
+  parent: FoodGworm
+  id: FoodOrangeGworm
+  name: оранжевый желейный червяк
+  components:
+  - type: Sprite
+    state: gworm_orange
+
+- type: entity
+  parent: FoodGworm
+  id: FoodWatermelonGworm
+  name: розовый желейный червяк
+  components:
+  - type: Sprite
+    state: gworm_pink
+
+- type: entity
+  parent: FoodGworm
+  id: FoodEggplantGworm
+  name: фиолетовый желейный червяк
+  components:
+  - type: Sprite
+    state: gworm_purple
+
+- type: entity
+  parent: FoodGworm
+  id: FoodRainbowCannabisGworm
+  name: радужный желейный червяк
+  components:
+  - type: Sprite
+    state: gworm_rainbow
+
+- type: entity
+  parent: FoodGworm
+  id: FoodCherryGworm
+  name: красный желейный червяк
+  components:
+  - type: Sprite
+    state: gworm_red
+
+- type: entity
+  parent: FoodGworm
+  id: FoodCoconutGworm
+  name: белый желейный червяк
+  components:
+  - type: Sprite
+    state: gworm_white
+
+- type: entity
+  parent: FoodGworm
+  id: FoodBananaGworm
+  name: желтый желейный червяк
+  components:
+  - type: Sprite
+    state: gworm_yellow
+
+# Желейные бобы
+- type: entity
+  parent: FoodCandyBase
+  id: FoodJbean
+  name: желейный боб
+  description: Желейный боб. Налетай!
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chewy
+  - type: Sprite
+    state: jbean
+  - type: Tag
+    tags:
+    - SmallJelly
+
+- type: entity
+  name: угольный желейный боб
+  parent: FoodJbean
+  id: FoodCoalJbean
+  description: Чудо из мира сладостей, способное спасти того кто не умеет себя сдерживать в баре.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chewy
+      - allies-cocktail
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Coal
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: jbean_black
+
+- type: entity
+  name: синий желейный боб
+  parent: FoodJbean
+  id: FoodBerryJbean
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chewy
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 2.5
+        - ReagentId: Vitamin
+          Quantity: 2.5
+  - type: Sprite
+    state: jbean_blue
+
+- type: entity
+  name: тёмно-синий желейный боб
+  parent: FoodJbean
+  id: FoodEggplantJbean
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chewy
+      - cheap
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: jbean_blue2
+
+- type: entity
+  name: шоколадный желейный боб
+  parent: FoodJbean
+  id: FoodChocolateJbean
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chewy
+      - chocolate
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: CocoaPowder
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: jbean_choc
+
+- type: entity
+  name: желейный боб из космической колы
+  parent: FoodJbean
+  id: FoodSpaceColaJbean
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chewy
+      - soda
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Cola
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: jbean_cola
+
+- type: entity
+  name: зеленый желейный боб
+  parent: FoodJbean
+  id: FoodAppleJbean
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chewy
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: jbean_green
+
+- type: entity
+  name: светло-голубой желейный боб
+  parent: FoodJbean
+  id: FoodGalaxythistleJbean
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chewy
+      - leafy
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Stellibinin
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: jbean_lblue
+
+- type: entity
+  name: оранжевый желейный боб
+  parent: FoodJbean
+  id: FoodOrangeJbean
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chewy
+      - sweet
+      - sour
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: jbean_orange
+
+- type: entity
+  name: розовый желейный боб
+  parent: FoodJbean
+  id: FoodOnionRedJbean
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chewy
+      - sweet
+      - fishy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: jbean_pink
+
+- type: entity
+  name: тёмно-розовый желейный боб
+  parent: FoodJbean
+  id: FoodWatermelonJbean
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chewy
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: jbean_pink2
+
+- type: entity
+  name: попкорновый желейный боб
+  parent: FoodJbean
+  id: FoodPopcornJbean
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chewy
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: jbean_popcorn
+
+- type: entity
+  name: фиолетовый желейный боб
+  parent: FoodJbean
+  id: FoodCarpJbean
+  components:
+  - type: FlavorProfile
+    flavors:
+      - acid
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Carpotoxin
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: jbean_purple
+
+- type: entity
+  name: радужный желейный боб
+  parent: FoodJbean
+  id: FoodRainbowCannabisJbean
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chalky
+      - trashy
+      - slimy
+      - tingly
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: SpaceDrugs
+          Quantity: 0.5
+        - ReagentId: Lipolicide
+          Quantity: 0.5
+        - ReagentId: MindbreakerToxin
+          Quantity: 0.5
+        - ReagentId: Happiness
+          Quantity: 0.5
+        - ReagentId: Psicodine
+          Quantity: 0.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: jbean_rainbow
+
+- type: entity
+  name: красный желейный боб
+  parent: FoodJbean
+  id: FoodCherryJbean
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: jbean_red
+
+- type: entity
+  name: желтый желейный боб
+  parent: FoodJbean
+  id: FoodBananaJbean
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: jbean_yellow
+
+# Жвачки
+- type: entity
+  parent: FoodCandyBase
+  id: FoodGumBase
+  abstract: true
+  name: жвачка
+  description: Несмотря на маленькую питательную ценность, очень долго жуётся.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: Edible
+    transferAmount: 0.15
+
+- type: entity
+  parent: FoodGumBase
+  id: FoodChewedgum
+  name: жевательная резинка
+  description: Её название не врёт - по ощущениям и правда резинка.
+  components:
+  - type: Sprite
+    state: chewedgum
+
+- type: entity
+  parent: FoodGumBase
+  id: FoodBubblegum
+  name: бубль-гум
+  description: Огромная жевательная резинка.. сколько времени пройдёт прежде чем я её съем?
+  components:
+  - type: Sprite
+    state: bubblegum
+  - type: Edible
+    transferAmount: 0.01
+
+# Леденцы
+- type: entity
+  parent: FoodCandyBase
+  id: FoodSuckerBase
+  abstract: true
+  name: леденец
+  description: Классическое карамельное изделие на съедобной палочке.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: Sprite
+    scale: 0.7,0.7
+  - type: Edible
+    transferAmount: 0.25
+
+- type: entity
+  parent: FoodSuckerBase
+  id: FoodSucker
+  name: леденец
+  components:
+  - type: Sprite
+    state: sucker
+
+- type: entity
+  parent: FoodSucker
+  id: FoodSuckerBerry
+  name: синий леденец
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: sucker_blue
+
+- type: entity
+  parent: FoodSucker
+  id: FoodSuckerApple
+  name: зеленый леденец
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: sucker_green
+
+- type: entity
+  parent: FoodSucker
+  id: FoodSuckerMystery
+  name: мистический леденец
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nothing
+          Quantity: 5
+  - type: Sprite
+    state: sucker_mystery
+
+- type: entity
+  parent: FoodSucker
+  id: FoodSuckerOrange
+  name: оранжевый леденец
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: sucker_orange
+
+- type: entity
+  parent: FoodSucker
+  id: FoodSuckerEggplant
+  name: фиолетовый леденец
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: sucker_purple
+
+- type: entity
+  parent: FoodSucker
+  id: FoodSuckerCherry
+  name: красный леденец
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: sucker_red
+
+- type: entity
+  parent: FoodSucker
+  id: FoodSuckerBanana
+  name: желтый леденец
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+  - type: Sprite
+    state: sucker_yellow
+
+# Шоколадки и конфеты
+- type: entity
+  parent: FoodCandyBase
+  id: FoodChocolateBase
+  description: Нежный шоколад, который буквально тает во рту.
+  abstract: true
+  components:
+  - type: FlavorProfile
+    flavors:
+      - chocolate
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: CocoaPowder
+          Quantity: 5
+        - ReagentId: Sugar
+          Quantity: 5
+
+- type: entity
+  parent: FoodChocolateBase
+  id: FoodChocolateToxinstest
+  name: шоколадная машина
+  components:
+  - type: Sprite
+    state: toxinstest
+
+- type: entity
+  parent: FoodChocolateBase
+  id: FoodChocolateYumbaton
+  name: шоколадная дубинка-шокер
+  components:
+  - type: Sprite
+    state: yumbaton
+  
+- type: entity
+  parent: FoodChocolateBase
+  id: FoodChocolateToolerone
+  name: шоколадный гаечный ключ
+  components:
+  - type: Sprite
+    state: toolerone
+
+- type: entity
+  parent: FoodChocolateBase
+  id: FoodChocolateChoco
+  name: шоколадный чоко
+  components:
+  - type: Sprite
+    state: choco
+
+- type: entity
+  parent: FoodChocolateBase
+  id: FoodChocolateMalper
+  name: шоколадный шприц
+  components:
+  - type: Sprite
+    state: malper
+
+- type: entity
+  parent: FoodChocolateBase
+  id: FoodChocolateCoin
+  name: шоколадная монета
+  components:
+  - type: Sprite
+    state: choco_coin
+
+- type: entity
+  parent: FoodChocolateBase
+  id: FoodChocolateOrange
+  name: шоколадный апельсин
+  components:
+  - type: Sprite
+    state: choco_orange
+
+- type: entity
+  parent: FoodChocolateBase
+  id: FoodChocolateDice
+  name: шоколадные кости
+  components:
+  - type: Sprite
+    state: choco_dice
+
+- type: entity
+  parent: FoodChocolateBase
+  id: FoodChocolateCash
+  name: шоколадные кредиты
+  components:
+  - type: Sprite
+    state: candy_cash
+
+- type: entity
+  parent: FoodChocolateBase
+  id: FoodChocolateCherryAsteroidcrunch
+  name: шоколадно-вишнёвый астероид
+  components:
+  - type: Sprite
+    state: asteroidcrunch
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: CocoaPowder
+          Quantity: 10
+        - ReagentId: Nutriment
+          Quantity: 2.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+
+- type: entity
+  parent: FoodChocolateBase
+  id: FoodChocolateBunny
+  name: шоколадный заяц
+  components:
+  - type: Sprite
+    state: chocolate_bunny
+
+- type: entity
+  parent: FoodChocolateBase
+  id: FoodChocolateWatermelonCandy
+  name: розовая конфета
+  components:
+  - type: Sprite
+    state: candy1
+    scale: 0.8,0.8
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3.5
+        - ReagentId: Sugar
+          Quantity: 2.5
+
+- type: entity
+  parent: FoodChocolateWatermelonCandy
+  id: FoodChocolateBerryCandy
+  name: синяя конфета
+  components:
+  - type: Sprite
+    state: candy2
+
+- type: entity
+  parent: FoodChocolateWatermelonCandy
+  id: FoodChocolateAppleCandy
+  name: зелёная конфета
+  components:
+  - type: Sprite
+    state: candy3
+
+- type: entity
+  parent: FoodChocolateWatermelonCandy
+  id: FoodChocolateCherryCandy
+  name: красная конфета
+  components:
+  - type: Sprite
+    state: candy4
+
+- type: entity
+  parent: FoodChocolateWatermelonCandy
+  id: FoodChocolateGoldenAppleCandy
+  name: золотистая конфета
+  components:
+  - type: Sprite
+    state: candy5
+
+- type: entity
+  parent: FoodChocolateWatermelonCandy
+  id: FoodChocolateEggplantCandy
+  name: конфета баклажан
+  components:
+  - type: Sprite
+    state: eggplantcandy

@@ -1,0 +1,70 @@
+- type: entity
+  parent: BoxCardboard
+  id: BoxSweeties
+  name: пачка сладостей
+  description: Источник счастья для многих.
+  suffix: Сладости
+  components:
+  - type: Storage
+    maxItemSize: Tiny
+    grid:
+    - 0,0,4,2
+    whitelist:
+      tags:
+      - SmallJelly
+
+- type: entity
+  parent: BoxSweeties
+  id: BoxJbeans
+  name: пачка желейных бобов
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodJbean
+    - id: FoodCoalJbean
+    - id: FoodBerryJbean
+    - id: FoodEggplantJbean
+    - id: FoodChocolateJbean
+    - id: FoodSpaceColaJbean
+    - id: FoodAppleJbean
+    - id: FoodGalaxythistleJbean
+    - id: FoodOrangeJbean
+    - id: FoodOnionRedJbean
+    - id: FoodWatermelonJbean
+    - id: FoodPopcornJbean
+    - id: FoodCarpJbean
+    - id: FoodCherryJbean
+    - id: FoodBananaJbean
+
+- type: entity
+  parent: BoxSweeties
+  id: BoxGbear
+  name: пачка желейных медведей
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodGbear
+    - id: FoodBerryGbear
+    - id: FoodAppleGbear
+    - id: FoodOrangeGbear
+    - id: FoodWatermelonGbear
+    - id: FoodEggplantGbear
+    - id: FoodCherryGbear
+    - id: FoodBananaGbear
+
+- type: entity
+  parent: BoxSweeties
+  id: BoxGworm
+  name: пачка желейных червей
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodGworm
+    - id: FoodBerryGworm
+    - id: FoodAppleGworm
+    - id: FoodOrangeGworm
+    - id: FoodWatermelonGworm
+    - id: FoodEggplantGworm
+    - id: FoodCherryGworm
+    - id: FoodCoconutGworm
+    - id: FoodBananaGworm

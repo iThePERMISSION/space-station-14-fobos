@@ -1,0 +1,307 @@
+{
+  "version": 1,
+  "license": null,
+  "copyright": null,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "asteroidcrunch"
+    },
+    {
+      "name": "candy1"
+    },
+    {
+      "name": "candy2"
+    },
+    {
+      "name": "candy3"
+    },
+    {
+      "name": "candy4"
+    },
+    {
+      "name": "candy5"
+    },
+    {
+      "name": "candy_cash"
+    },
+    {
+      "name": "candycane"
+    },
+    {
+      "name": "candycorn"
+    },
+    {
+      "name": "caramel"
+    },
+    {
+      "name": "chewedgum"
+    },
+    {
+      "name": "cottoncandy_blue"
+    },
+    {
+      "name": "cottoncandy_green"
+    },
+    {
+      "name": "cottoncandy_orange"
+    },
+    {
+      "name": "cottoncandy_pink"
+    },
+    {
+      "name": "cottoncandy_plain"
+    },
+    {
+      "name": "cottoncandy_purple"
+    },
+    {
+      "name": "cottoncandy_rainbow"
+    },
+    {
+      "name": "cottoncandy_red"
+    },
+    {
+      "name": "cottoncandy_yellow"
+    },
+    {
+      "name": "cottoncandy_red",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_orange-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_yellow-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_green-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_blue-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_purple-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_pink-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_rainbow-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_plain-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_orange-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_yellow-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_green-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_blue-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_purple-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_pink-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_rainbow-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "cottoncandy_plain-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "eggplantcandy"
+    },
+    {
+      "name": "gbear_rainbow"
+    },
+    {
+      "name": "gbear_red"
+    },
+    {
+      "name": "gbear_orange"
+    },
+    {
+      "name": "gbear_yellow"
+    },
+    {
+      "name": "gbear_green"
+    },
+    {
+      "name": "gbear_blue"
+    },
+    {
+      "name": "gbear_purple"
+    },
+    {
+      "name": "gbear"
+    },
+    {
+      "name": "gbear_pink"
+    },
+    {
+      "name": "gworm"
+    },
+    {
+      "name": "gworm_white"
+    },
+    {
+      "name": "gworm_blue"
+    },
+    {
+      "name": "gworm_green"
+    },
+    {
+      "name": "gworm_orange"
+    },
+    {
+      "name": "gworm_pink"
+    },
+    {
+      "name": "gworm_purple"
+    },
+    {
+      "name": "gworm_rainbow"
+    },
+    {
+      "name": "gworm_red"
+    },
+    {
+      "name": "gworm_yellow"
+    },
+    {
+      "name": "jbean_black"
+    },
+    {
+      "name": "jbean_blue"
+    },
+    {
+      "name": "jbean_blue2"
+    },
+    {
+      "name": "jbean_choc"
+    },
+    {
+      "name": "jbean_green"
+    },
+    {
+      "name": "jbean_lblue"
+    },
+    {
+      "name": "jbean_orange"
+    },
+    {
+      "name": "jbean_pink"
+    },
+    {
+      "name": "jbean_pink2"
+    },
+    {
+      "name": "jbean_purple"
+    },
+    {
+      "name": "jbean_rainbow"
+    },
+    {
+      "name": "jbean_red"
+    },
+    {
+      "name": "jbean_popcorn"
+    },
+    {
+      "name": "jbean_cola"
+    },
+    {
+      "name": "jbean"
+    },
+    {
+      "name": "jbean_yellow"
+    },
+    {
+      "name": "malper"
+    },
+    {
+      "name": "nougat"
+    },
+    {
+      "name": "sucker"
+    },
+    {
+      "name": "sucker_blue"
+    },
+    {
+      "name": "sucker_green"
+    },
+    {
+      "name": "sucker_mystery"
+    },
+    {
+      "name": "sucker_orange"
+    },
+    {
+      "name": "sucker_purple"
+    },
+    {
+      "name": "sucker_red"
+    },
+    {
+      "name": "sucker_yellow"
+    },
+    {
+      "name": "toolerone"
+    },
+    {
+      "name": "toxinstest"
+    },
+    {
+      "name": "yumbaton"
+    },
+    {
+      "name": "candy"
+    },
+    {
+      "name": "choco_coin"
+    },
+    {
+      "name": "choco_orange"
+    },
+    {
+      "name": "chocolate_bunny"
+    },
+    {
+      "name": "candied_pineapple"
+    },
+    {
+      "name": "choco_dice"
+    },
+    {
+      "name": "choco"
+    }
+  ]
+}

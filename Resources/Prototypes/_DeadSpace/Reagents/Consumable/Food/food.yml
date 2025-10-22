@@ -1,0 +1,9 @@
+- type: reagent
+  id: Caramel
+  name: reagent-name-caramel
+  group: Foods
+  desc: reagent-desc-caramel
+  physicalDesc: reagent-physical-desc-sweet
+  flavor: sweet
+  color: "#8B4513"
+  meltingPoint: 146.0

@@ -1,0 +1,8 @@
+- type: reaction
+  id: Caramel
+  minTemp: 380
+  reactants:
+    Sugar:
+      amount: 1
+  products:
+    Caramel: 1
