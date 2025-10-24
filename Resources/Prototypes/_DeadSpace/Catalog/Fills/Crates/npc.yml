@@ -7,3 +7,13 @@
   - type: StorageFill
     contents:
     - id: MobGiantSpiderSpace
+
+- type: entity
+  id: CrateNPCRandomXenomorph
+  parent: CrateSecure
+  name: ящик с ксеноморфом
+  description: Ящик для содержания опасного ксеноморфа.
+  components:
+  - type: StorageFill
+    contents:
+    - id: RandomSpawnMobXeno

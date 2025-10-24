@@ -1,0 +1,19 @@
+- type: entity
+  parent: MarkerBase
+  id: RandomSpawnMobXeno
+  name: спавнер случайного ксеноморфа
+  suffix: Ксеноморф
+  components:
+  - type: RandomSpawner
+    chance: 1
+    prototypes:
+    - MobXenoPraetorian
+    - MobXenoDrone
+    - MobXenoRavager
+    - MobXenoRunner
+    - MobXenoRouny
+    - MobXenoSpitter
+    rareChance: 0.01
+    rarePrototypes:
+    - MobXenoQueen
+    offset: 0.0

@@ -244,6 +244,16 @@
     sprite: Mobs/Animals/spacespider.rsi
     state: spacespider
   product: CrateNPCGiantSpiderSpace
-  cost: 4000
+  cost: 4500
+  category: cargoproduct-category-name-livestock
+  group: taipan_market
+
+- type: cargoProduct
+  id: TaipanLivestockRandomXenomorph
+  icon:
+    sprite: Mobs/Aliens/Xenos/praetorian.rsi
+    state: running
+  product: CrateNPCRandomXenomorph
+  cost: 5000
   category: cargoproduct-category-name-livestock
   group: taipan_market

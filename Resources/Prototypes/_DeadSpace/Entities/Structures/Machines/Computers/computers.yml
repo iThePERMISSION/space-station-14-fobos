@@ -616,11 +616,11 @@
 
 - type: entity
   parent: ComputerShuttle
-  id: ComputerShuttleOnTaipan
+  id: ComputerShuttleVisitorTaipan
   suffix: Тайпан
   name: консоль управления шаттлом
   description: Используется для пилотирования корабля.
   components:
   - type: Tag
     tags:
-      - Syndicate
+      - Taipan
