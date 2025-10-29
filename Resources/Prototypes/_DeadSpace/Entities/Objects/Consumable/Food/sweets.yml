@@ -8,7 +8,7 @@
     tags:
       - Candy
   - type: Sprite
-    sprite: /Uploaded/sweets.rsi # _DeadSpace/Objects/Consumable/Food/sweets.rsi
+    sprite: _DeadSpace/Objects/Consumable/Food/sweets.rsi
     state: nougat
   - type: Item
     size: Tiny
@@ -109,7 +109,7 @@
   - type: Sprite
     state: cottoncandy_plain
   - type: Item
-    sprite: /Uploaded/sweets.rsi
+    sprite: _DeadSpace/Objects/Consumable/Food/sweets.rsi
     heldPrefix: cottoncandy_plain
   - type: FlavorProfile
     flavors:
@@ -173,7 +173,7 @@
   - type: Sprite
     state: cottoncandy_purple
   - type: Item
-    heldPrefix: cottoncandy_eggplant
+    heldPrefix: cottoncandy_purple
 
 - type: entity
   parent: FoodCottoncandy
@@ -739,17 +739,6 @@
   components:
   - type: Sprite
     state: chewedgum
-
-- type: entity
-  parent: FoodGumBase
-  id: FoodBubblegum
-  name: бубль-гум
-  description: Огромная жевательная резинка.. сколько времени пройдёт прежде чем я её съем?
-  components:
-  - type: Sprite
-    state: bubblegum
-  - type: Edible
-    transferAmount: 0.01
 
 # Леденцы
 - type: entity

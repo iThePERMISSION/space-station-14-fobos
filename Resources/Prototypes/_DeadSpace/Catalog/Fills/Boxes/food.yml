@@ -18,6 +18,9 @@
   id: BoxJbeans
   name: пачка желейных бобов
   components:
+  - type: Sprite
+    sprite: _DeadSpace/Objects/Storage/jelly_packs.rsi
+    state: 
   - type: StorageFill
     contents:
     - id: FoodJbean
@@ -68,3 +71,39 @@
     - id: FoodCherryGworm
     - id: FoodCoconutGworm
     - id: FoodBananaGworm
+
+- type: entity
+  id: Gumbox
+  name: пачка жвачек
+  description: Розовая прям как то, что в ней.
+  parent: BaseStorageItem
+  components:
+  - type: Sprite
+    sprite: _DeadSpace/Objects/Storage/gumbox.rsi
+    layers:
+      - map: [ base ]
+        state: close
+  - type: Item
+    sprite: _DeadSpace/Objects/Storage/gumbox.rsi
+  - type: Storage
+    maxItemSize: Tiny
+    grid:
+    - 0,0,2,3
+  - type: StorageFill
+    contents:
+    - id: FoodChewedgum
+    - id: FoodChewedgum
+    - id: FoodChewedgum
+    - id: FoodChewedgum
+    - id: FoodChewedgum
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,3
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: open }
+          False: { state: close }
+  - type: Appearance

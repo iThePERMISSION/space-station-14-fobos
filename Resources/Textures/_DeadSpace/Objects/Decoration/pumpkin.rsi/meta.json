@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "null",
+  "copyright": "null",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "pumpkin_1"
+    },
+    {
+      "name": "pumpkin_2"
+    },
+    {
+      "name": "pumpkin_3"
+    },
+    {
+      "name": "pumpkin_4"
+    },
+    {
+      "name": "pumpkin_5"
+    },
+    {
+      "name": "pumpkin_6"
+    },
+    {
+      "name": "pumpkin_7"
+    },
+    {
+      "name": "pumpkin_8"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+- type: entity
+  name: тыква со странным лицом
+  parent: FoodPumpkin
+  id: FoodPumpkinRandomFace
+  description: Большая.. оранжевая.. и забавная.
+  components:
+  - type: RandomSprite
+    available:
+    - pumpkin:
+        pumpkin_1: ""
+        pumpkin_2: ""
+        pumpkin_3: ""
+        pumpkin_4: ""
+        pumpkin_5: ""
+        pumpkin_6: ""
+        pumpkin_7: ""
+        pumpkin_8: ""
+  - type: Sprite
+    sprite: _DeadSpace/Objects/Decoration/pumpkin.rsi
+    layers:
+    - state: pumpkin_1
+      map: ["pumpkin"]

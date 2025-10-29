@@ -2526,8 +2526,9 @@
   - type: Butcherable
     butcheringType: Knife
     spawned:
-    - id: CarvedPumpkin
+    - id: FoodPumpkinRandomFace # DS14
     - id: PumpkinSeeds
+    deconstructionTarget: null
   - type: Tag
     tags:
     - Fruit
