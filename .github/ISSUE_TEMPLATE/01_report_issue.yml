@@ -10,7 +10,7 @@ body:
     attributes:
       label: Дата/Время/Сервер.
       description: Укажите дату, время и название сервера на котором случился баг. Указывайте лишь тот сервер, на которым вы были в момент бага, а не на котором думаете, что был баг.
-      placeholder: wizards/aa1337b
+      placeholder: Дата: Время: Название сервера:
     validations:
       required: false
   - type: textarea
