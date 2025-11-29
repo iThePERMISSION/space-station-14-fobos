@@ -77,6 +77,7 @@ def main():
             changes = [changes]
 
 # DS14-start
+        if url:
             link_suffix = f" ([PR]({url}))" 
 
             for change in changes:
