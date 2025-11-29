@@ -76,6 +76,15 @@ def main():
         if not isinstance(changes, list):
             changes = [changes]
 
+# DS14-start
+        if url:
+            link_suffix = f" ([PR]({url}))" 
+
+            for change in changes:
+                if "message" in change:
+                    change["message"] = str(change["message"]) + link_suffix
+# DS14-end
+
         if len(changes):
             # Don't add empty changelog entries...
             max_id += 1
