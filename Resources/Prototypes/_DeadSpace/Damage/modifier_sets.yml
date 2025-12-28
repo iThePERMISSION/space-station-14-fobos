@@ -30,3 +30,17 @@
     Piercing: 0.85
     Cold: 0.5
     Poison: 0.8
+    
+- type: damageModifierSet
+  id: ShadowDragon
+  coefficients:
+    Blunt: 0.6
+    Slash: 0.6
+    Piercing: 0.6
+    Heat: 1.5
+    Cold: 0.0
+    Poison: 0.0
+    Radiation: 0.0
+    Asphyxiation: 0.0
+    Bloodloss: 0.0
+    Cellular: 0.0

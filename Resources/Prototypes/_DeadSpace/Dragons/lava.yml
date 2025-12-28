@@ -1,0 +1,126 @@
+- type: entity
+  parent: BaseMobDragon
+  id: MobLavaDragon
+  suffix: Лавовый
+  name: лавовый дракон
+  description: Летающее отродье несущее смерть.
+  components:
+  - type: Sprite
+    sprite: _DeadSpace/Dragons/lava.rsi
+    noRot: true
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: alive-unshaded
+      shader: unshaded
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: Лавовый дракон
+    description: Всадник апокалипсиса и губитель планет. Сожгите всех дотла, не оставив и пепла!
+    rules: ghost-role-information-space-dragon-description
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    damage:
+      types:
+        Piercing: 18
+        Heat: 12
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      530: Critical
+      585: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      415: 0.7
+      470: 0.5
+  - type: PointLight
+    radius: 3
+    energy: 4.5
+    color: "#ff4242"
+    castShadows: false
+  - type: Firestarter
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 3.5
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+
+- type: entity
+  id: LavaRift
+  name: лавовый разлом
+  description: Чёрт, похоже это портал в самое пекло.
+  components:
+  - type: Sprite
+    sprite: _DeadSpace/Specific/Rifts/lava_carprift.rsi
+    layers:
+    - state: icon_red
+      shader: unshaded
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Glass
+  - type: DragonRift
+    chance: 1
+    prototypes:
+    - MobLavaCarp
+
+- type: entity
+  name: лавовый карп
+  parent: BaseMobCarp
+  id: MobLavaCarp
+  description: Адское отродье которое похоже хочет сжечь вас.
+  components:
+    - type: Sprite
+      sprite: _DeadSpace/Dragons/Carps/lava.rsi
+      state: alive
+    - type: Physics
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Dead
+    - type: PointLight
+      radius: 2
+      energy: 3.5
+      color: "#ff4242"
+      castShadows: false
+    - type: Stamina
+      critThreshold: 300
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.40
+          density: 10
+          mask:
+            - MobMask
+          layer:
+            - Opaque
+    - type: TypingIndicator
+      proto: robot
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Лавовый карп
+      description: Убейте всех и помогите дракону! Запускайте в своих жертв слабые огненные шары и взрывайтесь после смерти!
+      rules: "Вы [color=#4B0082]Командный антагонист[/color]. [color=red]Убивайте всех! Помогайте другим сжечь дракону всё дотла![/color]"
+      mindRoles:
+      - MindRoleGhostRoleTeamAntagonist
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 130
+        behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"] 

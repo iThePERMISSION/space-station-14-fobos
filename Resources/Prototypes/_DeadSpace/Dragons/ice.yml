@@ -1,0 +1,62 @@
+- type: entity
+  parent: BaseMobDragon
+  id: MobIceDragon
+  suffix: Ледяной
+  name: ледяной дракон
+  description: Летающее отродье несущее холод.
+  components:
+  - type: Sprite
+    sprite: _DeadSpace/Dragons/lava.rsi
+    noRot: true
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: alive-unshaded
+      shader: unshaded
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: Ледяной дракон
+    description: Заморозьте всё вокруг вместе со своей верной армией!
+    rules: ghost-role-information-space-dragon-description
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    damage:
+      types:
+        Piercing: 18
+        Heat: 12
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      510: Critical
+      535: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      325: 0.7
+      450: 0.5
+
+- type: entity
+  id: IceRift
+  name: ледяной разлом
+  description: От него прямо таки веет холодом.
+  components:
+  - type: Sprite
+    sprite: _DeadSpace/Specific/Rifts/ice_carprift.rsi
+    layers:
+    - state: icon_blue
+      shader: unshaded
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Glass
+  - type: DragonRift
+    chance: 1
+    prototypes:
+    - MobButterflyShadowAngry 

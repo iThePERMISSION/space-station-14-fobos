@@ -1,0 +1,528 @@
+- type: entity
+  parent: BaseMobDragon
+  id: MobShadowDragon
+  suffix: Теневой
+  name: космический дракон
+  description: Летающее отродье уничтожающее всё!
+  components:
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: Теневой дракон
+    description: Истинное и неповторимое дитя тьмы. Мощные молнии, порождение разломов... Погрузите станцию в хаос и тьму!
+    rules: "Вы [color=#4B0082]Командный антагонист[/color]. [color=red]Убивайте всех, ешьте всех, стреляйте лазером на ПКМ, бейте молниями и переходите в астральный мир на 3 секунды![/color]"
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      340: Critical
+      405: Dead 
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      230: 0.7 #DS14
+      310: 0.5 #DS14
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 20
+    damage:
+      types:
+        Heat: -0.75
+        Bloodloss: -5
+      groups:
+        Brute: -0.30
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    damage:
+      types:
+        Piercing: 14
+        Slash: 11
+  - type: SithLightningAbility
+    range: 6
+  - type: ActionGrant
+    actions:
+    - ActionAstralDragon
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 5.5
+    weightlessModifier: 1.5
+  - type: ActionGun
+    action: ActionShadowDragonsBreath
+    gunProto: AmeBreathGun
+  - type: Sprite
+    sprite: _DeadSpace/Dragons/shadow.rsi
+    noRot: true
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: alive-unshaded
+      shader: unshaded
+  - type: Gun
+    fireRate: 0.90
+    useKey: false
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon2.ogg
+    soundEmpty:
+      path: /Audio/Effects/bite.ogg
+  - type: GunRequiresWield
+  - type: HitscanBatteryAmmoProvider
+    proto: Shadow
+    fireCost: 100
+  - type: Dragon
+    spawnRiftAction: ActionSpawnShadowRift
+  - type: Battery
+    maxCharge: 2000
+    startingCharge: 2000
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 10
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Critical:
+        Base: crit
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 1500
+        mask:
+        - FlyingMobMask
+
+# Оружие
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: AmeBreathGun
+  name: эми пушка
+  description: Для запуска теневым драконом.
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 30
+    rechargeSound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileAmeBreath
+    capacity: 1
+    count: 1
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Effects/tesla_collapse.ogg
+    soundEmpty: null
+    projectileSpeed: 25
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseBulletTrigger
+  id: ProjectileAmeBreath
+  name: эми заряд
+  description: Не пытайся его поймать.
+  components:
+  - type: PointLight
+    color: "#87CEFA"
+    radius: 3.0
+    energy: 7.0
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: bluespace
+      shader: unshaded
+  - type: EmpOnTrigger
+    range: 8.5
+    energyConsumption: 65000
+  - type: DeleteOnTrigger
+  - type: TimedDespawn
+    lifetime: 15
+
+- type: hitscan
+  id: Shadow
+  damage:
+    types:
+      Heat: 20
+  muzzleFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: muzzle_blue
+  travelFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: beam_blue
+  impactFlash:
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    state: impact_blue
+
+# Разлом
+- type: entity
+  id: ShadowRift
+  name: теневой разлом
+  description: Бездна неосизаемой тьмы пронизывает ваше тело насквозь.
+  components:
+  - type: Sprite
+    sprite: Structures/Specific/Anomalies/shadow_anom.rsi
+    layers:
+    - state: anom
+      map: ["enum.AnomalyVisualLayers.Base"]
+    - state: pulse
+      map: ["enum.AnomalyVisualLayers.Animated"]
+      visible: false
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: ShadowDragon
+  - type: DragonRift
+    chance: 1
+    prototypes:
+    - MobButterflyShadowAngry 
+    - MobRabbitShadowAngry
+    - MobJellyfishShadowAngry
+    - MobAngelShadowAngry
+    - MobShadowCarp
+
+# Теневые существа
+- type: entity
+  name: теневой карп
+  parent: BaseMobCarp
+  id: MobShadowCarp
+  description: Отродье тени....
+  components:
+    - type: Sprite
+      sprite: _DeadSpace/Dragons/Carps/shadow.rsi
+      state: alive
+    - type: Physics
+    - type: ActionGrant
+      actions:
+      - ActionAstralCarp
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        80: Dead
+    - type: Stamina
+      critThreshold: 300
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.40
+          density: 10
+          mask:
+            - MobMask
+          layer:
+            - Opaque
+    - type: TypingIndicator
+      proto: robot
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Теневой карп
+      description: Убейте всех и помогите дракону! Используйте переход в астрал в своих целях!
+      rules: "Вы [color=#4B0082]Командный антагонист[/color]. [color=red]Убивайте всех! Помогайте другим теням и дракону![/color]"
+      mindRoles:
+      - MindRoleGhostRoleTeamAntagonist
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 80
+        behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"] 
+
+- type: entity
+  name: тень
+  parent: [ BaseShadowMob, FlyingMobBase ]
+  id: BaseAngryShadowMob
+  abstract: true
+  description: Маленький сгусток тьмы, бесшумно машущий крылышками с замысловатым узором.
+  components:
+  - type: CombatMode
+  - type: HTN
+    rootTask:
+      task: XenoCompound
+    blackboard:
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 5.5
+    baseWalkSpeed: 4
+  - type: Physics
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Slash: 10
+        Blunt: 5
+  - type: NpcFactionMember
+    factions:
+    - Dragon
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: Теневое существо
+    description: Убейте всех и помогите дракону!
+    rules: "Вы [color=#4B0082]Командный антагонист[/color]. [color=red]Убивайте всех! Помогайте другим теням и дракону![/color]"
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 10
+        mask:
+          - MobMask
+        layer:
+          - Opaque
+
+- type: entity
+  name: теневая бабочка
+  parent: [ BaseAngryShadowMob, MobButterflyShadow ]
+  id: MobButterflyShadowAngry
+  suffix: Злой
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      15: Dead
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Slash: 5
+        Blunt: 5
+
+- type: entity
+  name: теневой кролик
+  parent: [ BaseAngryShadowMob, MobRabbitShadow ]
+  id: MobRabbitShadowAngry
+  suffix: Злой
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      110: Dead
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Slash: 8
+        Blunt: 5
+
+- type: entity
+  name: теневая медуза
+  parent: [ BaseAngryShadowMob, MobJellyfishShadow ]
+  id: MobJellyfishShadowAngry
+  suffix: Злой
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Shock: 7
+  - type: StaminaDamageOnHit
+    damage: 15
+    sound: /Audio/Weapons/egloves.ogg
+
+- type: entity
+  name: тень ангела
+  suffix: Злой
+  parent: [ BaseAngryShadowMob, MobAngelShadow ]
+  id: MobAngelShadowAngry
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      130: Dead
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      groups:
+        Brute: 17
+
+# Астральные версии
+- type: entity
+  id: Astral
+  save: false
+  abstract: true
+  parent: BaseMob
+  description: Mobs without physical bodies
+  components:
+  - type: Sprite
+    noRot: true
+    overrideContainerOcclusion: true # Always show up regardless of where they're contained.
+    drawdepth: Ghosts
+  - type: FTLSmashImmune
+  - type: AntagImmune
+  - type: FlashImmunity
+  - type: ImmunEgg
+  - type: ImmunNecroobelisk
+  - type: ImmunitetInfectionDead
+  - type: CargoSellBlacklist
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 7
+    baseWalkSpeed: 4
+  - type: MovementIgnoreGravity
+  - type: Physics
+    bodyType: KinematicController
+    bodyStatus: InAir
+  - type: CanMoveInAir
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 15
+        layer:
+        - GhostImpassable
+
+- type: entity
+  parent:
+  - Astral
+  id: MobAstralCarp
+  name: прозрачный карп
+  description: Жутко!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DeadSpace/Dragons/Carps/shadow.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: astral
+
+- type: entity
+  parent:
+  - Astral
+  id: MobAstralDragon
+  name: прозрачный дракон
+  description: Жутко!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DeadSpace/Dragons/shadow.rsi
+    noRot: true
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: astral
+
+# Экшнс
+- type: entity
+  id: ActionShadowDragonsBreath
+  name: "[color=blue]ЭМИ заряд[/color]"
+  description: Запустите ЭМИ импульс и выведите из строя вражеское лазерное вооружение и приборы!
+  components:
+  - type: WorldTargetAction
+    icon: { sprite : Objects/Weapons/Guns/Projectiles/magic.rsi, state: bluespace }
+    event: !type:ActionGunShootEvent
+    priority: 2
+    checkCanAccess: false
+    range: 0
+    itemIconStyle: BigAction
+
+- type: entity
+  id: ActionAstralDragon
+  name: Переход в астрал
+  description: 3 секунды полной неуязвимости и неосизаемости! Но и урона нанести вы не сможете...
+  components:
+  - type: InstantAction
+    useDelay: 120
+    event: !type:PolymorphActionEvent
+      protoId: AstralShadowDragon
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DeadSpace/Dragons/shadow.rsi
+      state: astral
+
+- type: entity
+  id: ActionAstralCarp
+  name: Переход в астрал
+  description: 2 секунды полной неуязвимости и неосизаемости! Но и урона нанести вы не сможете нанести...
+  components:
+  - type: InstantAction
+    useDelay: 30
+    event: !type:PolymorphActionEvent
+      protoId: AstralShadowCarp
+    itemIconStyle: NoItem
+    icon:
+      sprite: _DeadSpace/Dragons/Carps/shadow.rsi
+      state: astral
+
+- type: entity
+  parent: BaseAction
+  id: ActionSpawnShadowRift
+  name: Призвать теневой разлом
+  description: Призывает теневых сущностей, которые готовы покрыть всё мраком.
+  components:
+  - type: Action
+    icon:
+      sprite: Structures/Specific/Anomalies/shadow_anom.rsi
+      state: anom
+    useDelay: 1
+    priority: 3
+  - type: InstantAction
+    event: !type:DragonSpawnRiftActionEvent
+
+# Полиморфы
+- type: polymorph
+  id: AstralShadowDragon
+  configuration:
+    entity: MobAstralDragon
+    forced: true
+    transferName: true
+    transferHumanoidAppearance: true
+    inventory: Drop
+    revertOnDeath: false
+    revertOnCrit: false
+    duration: 3
+
+- type: polymorph
+  id: AstralShadowCarp
+  configuration:
+    entity: MobAstralCarp
+    forced: true
+    transferName: true
+    transferHumanoidAppearance: true
+    inventory: Drop
+    revertOnDeath: false
+    revertOnCrit: false
+    duration: 2

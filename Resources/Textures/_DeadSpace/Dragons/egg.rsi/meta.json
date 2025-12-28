@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Create by permissioner(discord) for server SS14 Мёртвый Космос",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "dragon_egg"
+    },
+    {
+      "name": "spots"
+    }
+  ]
+}

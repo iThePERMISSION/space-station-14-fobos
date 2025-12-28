@@ -1,0 +1,50 @@
+- type: entity
+  name: яйцо дракона
+  parent: BaseMob
+  id: EggIceDragon
+  components:
+  - type: Tag
+    tags:
+    - Wall
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    scale: 1.1, 1.1
+    noRot: true
+    sprite: _DeadSpace/Dragons/egg.rsi
+    layers:
+    - state: dragon_egg
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+      color: "#060270"
+    - state: spots
+      color: "#98F5F9"
+  - type: Damageable
+    damageContainer: Biological
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: Appearance
+  - type: Evolution
+    createGhostRole: true
+    ghostRoleName: маленький дракон
+    ghostRoleDesk: Найдите свою мать и вместе с ней уничтожьте всё!
+    duration: 120
+    spawnedEntities:
+      - MobMiniDragonIce
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 180
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: NpcFactionMember
+    factions:
+    - Dragon
+  - type: ZombieImmune
+  - type: ImmunitetInfectionDead
+  - type: VirusImmun
+    immunAll: true
+  - type: ImmunEgg
