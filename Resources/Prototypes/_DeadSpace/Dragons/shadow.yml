@@ -43,7 +43,7 @@
       types:
         Piercing: 14
         Slash: 11
-  - type: SithLightningAbility
+  - type: RenegadeLightningAbility
     range: 6
   - type: ActionGrant
     actions:
