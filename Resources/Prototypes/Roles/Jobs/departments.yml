@@ -160,7 +160,6 @@
   description: department-Law-description
   color: "#d98b71"
   roles:
-  - Magistrat
   - IAA
   - Lawyer
   accountNumber: 1323  #backmen: currency
