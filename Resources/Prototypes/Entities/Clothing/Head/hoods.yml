@@ -27,7 +27,7 @@
       HeadSide: HEAD
   # DS14-start
   - type: VirusResistance
-    virusResistanceCoefficient: 0.9
+    virusResistanceCoefficient: 0.8
   # DS14-end
 
 - type: entity
@@ -44,6 +44,10 @@
     sprite: Clothing/Head/Hoods/Bio/cmo.rsi
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.7
+  # DS14-start
+  - type: VirusResistance
+    virusResistanceCoefficient: 0.9
+  # DS14-end
 
 - type: entity
   parent: ClothingHeadHatHoodBioGeneral
@@ -100,7 +104,7 @@
     zombificationResistanceCoefficient: 0.8
   # DS14-start
   - type: VirusResistance
-    virusResistanceCoefficient: 0.99
+    virusResistanceCoefficient: 0.95
   # DS14-end
 
 - type: entity

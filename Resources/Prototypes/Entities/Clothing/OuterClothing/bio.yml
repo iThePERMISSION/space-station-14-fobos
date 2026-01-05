@@ -25,6 +25,8 @@
   # DS14-start
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodBioGeneral
+  - type: VirusResistance
+    virusResistanceCoefficient: 0.1
   # DS14-end
 
 - type: entity
