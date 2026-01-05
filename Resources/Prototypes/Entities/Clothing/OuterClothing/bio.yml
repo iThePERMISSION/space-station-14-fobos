@@ -107,6 +107,8 @@
     zombificationResistanceCoefficient: 0.4
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodBioSecurity
+  - type: VirusResistance
+    virusResistanceCoefficient: 0.1
   # DS14-end
   - type: GroupExamine
   - type: ClothingSpeedModifier
