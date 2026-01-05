@@ -23,8 +23,8 @@
     walkModifier: 0.95
     sprintModifier: 0.95
   # DS14-start
-  - type: VirusResistance
-    virusResistanceCoefficient: 0.6
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodBioGeneral
   # DS14-end
 
 - type: entity
@@ -38,6 +38,10 @@
     sprite: Clothing/OuterClothing/Bio/cmo.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Bio/cmo.rsi
+  # DS14-start
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodBioCmo
+  # DS14-end
 
 - type: entity
   parent: ClothingOuterBioGeneral
@@ -54,6 +58,10 @@
     modifiers:
       coefficients:
         Caustic: 0.4
+  # DS14-start
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodBioJanitor
+  # DS14-end
 
 - type: entity
   parent: ClothingOuterBioGeneral
@@ -66,6 +74,10 @@
     sprite: Clothing/OuterClothing/Bio/scientist.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Bio/scientist.rsi
+  # DS14-start
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodBioScientist
+  # DS14-end
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseSecurityContraband]
@@ -91,8 +103,8 @@
     damageCoefficient: 0.90
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.4
-  - type: VirusResistance
-    virusResistanceCoefficient: 0.5
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodBioSecurity
   # DS14-end
   - type: GroupExamine
   - type: ClothingSpeedModifier
@@ -112,3 +124,7 @@
     sprite: Clothing/OuterClothing/Bio/virology.rsi
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.25
+  # DS14-start
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodBioVirology
+  # DS14-end
