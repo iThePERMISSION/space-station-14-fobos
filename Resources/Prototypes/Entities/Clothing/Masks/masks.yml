@@ -19,10 +19,6 @@
     layers:
       Snout: Mask
     hideOnToggle: true
-  # DS14-start
-  - type: VirusResistance
-    virusResistanceCoefficient: 0.1
-  # DS14-end
 
 - type: entity
   parent: [ClothingMaskGas, BaseSecurityContraband]
