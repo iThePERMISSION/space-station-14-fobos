@@ -109,8 +109,12 @@
     damageCoefficient: 0.90
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.4
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodBioSecurity
+    slot: head
   - type: VirusResistance
     virusResistanceCoefficient: 0.1
   # DS14-end
