@@ -4,7 +4,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.EntityEffects.Effects;
 
-public sealed partial class Antibiotic : EventEntityEffect<Antibiotic>
+public sealed partial class InfectionDamage : EventEntityEffect<InfectionDamage>
 {
     [DataField]
     public float BaseDamage = 1f;
@@ -12,5 +12,5 @@ public sealed partial class Antibiotic : EventEntityEffect<Antibiotic>
     public float ResistanceIncrease = 0.05f;
 
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
-        => Loc.GetString("reagent-effect-guidebook-antibiotic", ("chance", Probability));
+        => Loc.GetString("reagent-effect-guidebook-infection-damage", ("chance", Probability));
 }

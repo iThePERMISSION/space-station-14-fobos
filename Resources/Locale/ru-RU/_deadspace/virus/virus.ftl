@@ -28,7 +28,7 @@ reagent-effect-guidebook-cause-virus =
        *[other] заражает
     } вирусом
 
-reagent-effect-guidebook-antibiotic =
+reagent-effect-guidebook-infection-damage =
     { $chance ->
         [1] Убивает
        *[other] убивает
