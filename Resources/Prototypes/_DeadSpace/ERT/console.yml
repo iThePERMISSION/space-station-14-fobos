@@ -140,7 +140,8 @@
       prototype: ErtResponceConsole
 
 - type: entity
-  parent: BaseItem
+  parent: 
+  - BaseItem
   id: TelephoneIaa
   name: устройство связи с ЦК
   description: Устройство связи, которое выдаётся агентам внутренних дел для связи с Центральным Командованием в экстренных случаях.
@@ -186,3 +187,5 @@
     - CentralCommandOfficial
   - type: Language
     selectedLanguage: GeneralLanguage
+  - type: Speech
+    speechVerb: Robotic
