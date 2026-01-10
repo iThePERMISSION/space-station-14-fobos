@@ -122,6 +122,41 @@
       amount: 1
 
 - type: ertTeam
+  id: Red
+  name: ОБР Красный
+  description:
+    Отряд специального назначения NanoTrasen, предназначенный для
+    быстрого реагирования на чрезвычайные ситуации и угрозы безопасности на
+    космических станциях и кораблях. Они обучены для выполнения различных
+    задач, включая борьбу с пиратами, спасательные операции и обеспечение
+    безопасности персонала.
+    7 членов отряда прибывают на шаттле типа Гамма, который оснащён всем
+    необходимым оборудованием для выполнения их миссии.
+    Время прибытия отряда от 10 до 15 минут.
+  rule: SpawnGammaShuttle # это буквально одинаковые шаттлы
+  cooldown:
+    min: 10m
+    max: 10m
+  spawnWindow:
+    min: 10m
+    max: 15m
+  codeBlackList:
+  - sierra
+  - enigma
+  - epsilon
+  - gamma
+  price: 4
+  spawns:
+    - id: RandomHumanoidSpawnerERTLeaderRed
+      amount: 1
+    - id: RandomHumanoidSpawnerERTSecurityRed
+      amount: 4
+    - id: RandomHumanoidSpawnerERTMedicalRed
+      amount: 1
+    - id: RandomHumanoidSpawnerERTEngineerRed
+      amount: 1
+
+- type: ertTeam
   id: Gamma
   name: ОБР Гамма
   description: 
@@ -189,7 +224,7 @@
     для выполнения их миссии.
     Время прибытия от 5 до 7 минут.
   rule: SpawnCentCommOfficialShuttle
-  cancelMessage: 
+  cancelMessage:
     Представитель Центрального Командования NanoTrasen не смог прибыть на станцию
     из-за непредвиденных обстоятельств. Мы приносим извинения за возможные неудобства.
   cooldown:
