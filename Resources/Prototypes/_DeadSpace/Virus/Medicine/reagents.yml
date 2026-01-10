@@ -16,10 +16,10 @@
               min: 5
 
 - type: reagent
-  id: Bacterizine
-  name: reagent-name-bacterizine
+  id: Infectizine
+  name: reagent-name-infectizine
   group: Medicine
-  desc: reagent-desc-bacterizine
+  desc: reagent-desc-infectizine
   physicalDesc: reagent-physical-desc-clear
   flavor: medicine
   color: "#7fc8ff"

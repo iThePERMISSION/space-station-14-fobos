@@ -225,8 +225,8 @@ sentient-virus-infect-compensation = Ваш первичный пациент у
 
 # АНТИБИОТИК/ПРОТИВОВИРУСНЫЕ
 
-reagent-name-bacterizine = бактеризин
-reagent-desc-bacterizine = Простейший антибиотик, эффективный против слабых вирусов.
+reagent-name-infectizine = инфектизин
+reagent-desc-infectizine = Простейший препарат, эффективный против слабых вирусов.
 
 reagent-name-mycocline = микоклин
 reagent-desc-mycocline = Антибиотик широкого спектра действия.
@@ -237,8 +237,8 @@ reagent-desc-virucidine = Агрессивный препарат, подавл�
 reagent-name-panacemycin = панацемицин
 reagent-desc-panacemycin = Экспериментальный антибиотик экстремального действия.
 
-ent-ChemistryBottleBacterizine = { ent-BaseChemistryBottleFilled }
-    .suffix = бактеризин
+ent-ChemistryBottleInfectizine = { ent-BaseChemistryBottleFilled }
+    .suffix = инфектизин
     .desc = { ent-BaseChemistryBottleFilled.desc }
 
 ent-ChemistryBottleMycocline = { ent-BaseChemistryBottleFilled }
