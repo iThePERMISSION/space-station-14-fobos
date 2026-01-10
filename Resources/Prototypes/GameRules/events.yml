@@ -38,7 +38,6 @@
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
     # DS14-start
-    - id: MonkeyKingSpawn # DS14 возможно временно тут, может быть будет перенесён в ModerateAntag, нужно чтобы игроки наигрались
     - id: MediumVirusPandemic
     # DS14-end
 
