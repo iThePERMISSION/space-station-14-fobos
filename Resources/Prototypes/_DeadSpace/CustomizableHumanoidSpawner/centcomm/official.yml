@@ -29,7 +29,7 @@
         department: Security
         time: 50h
       - !type:RoleTimeRequirement
-        role: Captain
+        role: JobCaptain
         time: 60h
       - !type:RoleTimeRequirement
         role: JobIAA
