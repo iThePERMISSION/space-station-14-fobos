@@ -1,21 +1,21 @@
- - type: entity
-   id: ActionJump
-   name: Прыгает в точку
-   description: Прыжок в выбранную точку.
-   categories: [ HideSpawnMenu ]
-   components:
-    - type: Action
-      useDelay: 10
-      icon:
-        sprite: Interface/Actions/actions_mecha.rsi
-        state: mech_savannah
-      itemIconStyle: NoItem
-      priority: -1
-    - type: TargetAction
-      range: 0
-      checkCanAccess: false
-    - type: WorldTargetAction
-      event: !type:JumpToPointActionEvent
+- type: entity
+  id: ActionJump
+  name: Прыгает в точку
+  description: Прыжок в выбранную точку.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: Interface/Actions/actions_mecha.rsi
+      state: mech_savannah
+    itemIconStyle: NoItem
+    priority: -1
+  - type: TargetAction
+    range: 0
+    checkCanAccess: false
+  - type: WorldTargetAction
+    event: !type:JumpToPointActionEvent
 
 - type: entity
   id: ActionGiveIntelligence
